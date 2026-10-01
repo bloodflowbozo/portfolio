@@ -1,0 +1,16 @@
+/* ==========================================================================
+   FONTS / SETTINGS
+   ========================================================================== */
+/// Font family
+:root {
+  --font-primary: "Didot", serif; // titres
+  --font-secondary: "Inter", sans-serif; // corps de texte
+
+  --font-size-content: #{typo(20px, 24px)};
+
+  /// Grosseur des textes
+  --font-size-h1: #{typo(150px)};
+  --font-size-h2: #{typo(64px)};
+  --font-size-h3: #{typo(64px)};
+  --font-size-h4: #{typo(48px)};
+}

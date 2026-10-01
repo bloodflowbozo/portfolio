@@ -1,0 +1,12 @@
+section {
+    padding-top: 110px;
+    padding-bottom: 110px;
+    position: relative;
+}
+
+@media screen and (max-width: $breakpoint-xs) {
+    section{
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+}

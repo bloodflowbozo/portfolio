@@ -1,0 +1,16 @@
+.bouton {
+    padding: 8px typo(15px,35px);
+    background-color: var(--color-primary);
+    letter-spacing: 4px;
+    font-size: typo(16px,20px);
+    font-weight: 400;
+    color: var(--color-white);
+    text-transform: uppercase;
+    transition: all 0.1s ease-out;
+
+    &:hover {
+        background-color: transparent;
+        border: 2px solid var(--color-primary);
+        color: var(--color-primary);
+    }
+}

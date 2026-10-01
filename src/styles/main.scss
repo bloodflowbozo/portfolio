@@ -1,0 +1,44 @@
+//FONTS
+// ici sont chargés les fonts
+@import url("https://fonts.cdnfonts.com/css/didot-2");
+
+// TOOLS
+// mixins et fonctions utilisés globalement dans le SCSS (Sass)
+@import "tools/typo";
+
+// SETTINGS
+// Contient les variables sur les polices, les définitions de couleurs, les définitions de  grandeurs,   etc.
+@import "settings/colors";
+@import "settings/easing";
+@import "settings/fonts";
+@import "settings/dimensions";
+
+// GENERIC
+// Permet de réinitialiser les CSS et de changer le modèle de boîte en box-sizing: border-box
+@import "generic/normalize";
+@import "generic/reset";
+
+// ELEMENTS
+// Modification des styles généraux de la page. Ce sont les styles qui seront généralement hérités par les éléments de la page.
+@import "elements/body";
+@import "elements/typography";
+@import "elements/links";
+@import "elements/wrapper";
+
+// COMPONENTS
+// Composants d'interface utilisateur spécifiques.
+// C’est là que la majorité de notre travail a lieu.
+@import "components/icons";
+@import "components/header.scss";
+@import "components/footer.scss";
+@import "components/bouton.scss";
+@import "components/card.scss";
+@import "components/section.scss";
+@import "components/hero.scss";
+@import "components/form.scss";
+@import "components/video";
+@import "components/scrolly.scss";
+@import "components/carousel.scss";
+@import "components/contact.scss";
+
+@import "../../node_modules/swiper/swiper-bundle";

@@ -1,0 +1,25 @@
+/* ==========================================================================
+   LINKS / ELEMENTS
+   Style de base de tous les liens et bouton du site
+   ========================================================================== */
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+}
+
+.bottom-right {
+    color: var(--color-black);
+    line-height: 1px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    &:hover {
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+}

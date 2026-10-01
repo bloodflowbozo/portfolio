@@ -1,0 +1,93 @@
+.hero {
+    position: relative;
+    height: fit-content;
+
+    padding-top: 200px;
+    margin-bottom: 10%;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 166px;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .js-swiper::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background-color: rgba($color: #000000, $alpha: 0.35);
+    }
+}
+
+
+@media screen and (max-width: $breakpoint-xs) {
+    .hero{
+        padding-top: 0px;
+
+        .reservation{
+                display: none;
+            }
+
+            
+
+        .media{
+            height: 500px;
+
+
+            
+        }
+
+        .content{
+            height: 500px;
+            align-items: center;
+            justify-content: center;
+
+        }
+    }
+}
+
+
+
+.hero__chambre{
+    padding-top: 0px;
+    margin-bottom: 0px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    h1{
+        color: var(--color-black);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    p{
+        max-width: 700px;
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width: $breakpoint-xs) {
+    .hero__chambre{
+        p{
+            max-width: 300px;
+        }
+    }
+
+}
