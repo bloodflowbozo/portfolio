@@ -17,7 +17,7 @@
                     </h1>
                 </div>
 
-                <p class="light">Intégration Web — Design</p>
+                <p class="light">Intégration Web - Design</p>
 
                 <div class="hero__caption">
                     <p>
@@ -43,8 +43,24 @@
     <div class="wrapper">
         <h2>Projets & Réalisations</h2>
 
-        <div class="swiper projets" data-component="Swiper">
+        <div class="swiper projets__swiper" data-component="Carousel">
             <div class="swiper-wrapper">
+                <a class="swiper-slide">
+                    <div class="texte">
+                        <h4>Refonte du site web de Boxotel</h4>
+                        <p>Repenser le site avec une approche fonctionnelle tout en conservant son identité visuelle.</p>
+                    </div>
+
+                    <img src="assets/images/ImgBoxotel.png" alt="Projet de refonte du site web de Boxotel" />
+                </a>
+                <a class="swiper-slide">
+                    <div class="texte">
+                        <h4>Refonte du site web de Boxotel</h4>
+                        <p>Repenser le site avec une approche fonctionnelle tout en conservant son identité visuelle.</p>
+                    </div>
+
+                    <img src="assets/images/ImgBoxotel.png" alt="Projet de refonte du site web de Boxotel" />
+                </a>
                 <a class="swiper-slide">
                     <div class="texte">
                         <h4>Refonte du site web de Boxotel</h4>
@@ -55,7 +71,7 @@
                 </a>
             </div>
 
-            <div class="swiper-pagination"></div>
+            
             <div class="swiper-scrollbar"></div>
         </div>
     </div>
@@ -67,6 +83,10 @@
             <p>01</p>
             <div class="bar"></div>
         </div>
+
+        <div class="media-texte">
+
+       
 
         <div class="media__texte">
             <h2>En gros, je suis qui?</h2>
@@ -84,9 +104,11 @@
             </p>
         </div>
 
-        <div class="media__media">
+        <div class="media__media img-grad">
             <img src="assets/images/ImgBoxotel.png" alt="Photo de Zack lorsqu'il était enfant" />
         </div>
+
+         </div>
     </div>
 </section>
 
@@ -108,28 +130,28 @@
                 <ul>
                     <li>
                         <svg class="icon icon--lg">
-                            <use href="#icon-instagram"></use>
+                            <use href="#icon-face"></use>
                         </svg>
                         Développement de jeu
                     </li>
 
                     <li>
                         <svg class="icon icon--lg">
-                            <use href="#icon-instagram"></use>
+                            <use href="#icon-face"></use>
                         </svg>
                         Sites web créatifs
                     </li>
 
                     <li>
                         <svg class="icon icon--lg">
-                            <use href="#icon-instagram"></use>
+                            <use href="#icon-face"></use>
                         </svg>
                         Applications mobiles
                     </li>
 
                     <li>
                         <svg class="icon icon--lg">
-                            <use href="#icon-instagram"></use>
+                            <use href="#icon-face"></use>
                         </svg>
                         Expériences webs
                     </li>
@@ -153,24 +175,39 @@
                 <p class="qualités__bottom light">Apprendre — explorer — créer</p>
             </div>
         </div>
-
+</div>
         <div class="logiciels">
             <div class="wrapper">
                 <h2>Logiciels maîtrisés</h2>
             </div>
 
-            <div class="swiper logiciels__swiper" data-component="Swiper">
+            <div class="swiper logiciels__swiper" data-component="Carousel" data-banner>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
+                        <img src="assets/images/ImgBoxotel.png" alt="" />
+                    </div>
+                                        <div class="swiper-slide">
+                        <img src="assets/images/ImgBoxotel.png" alt="" />
+                    </div>
+                                        <div class="swiper-slide">
+                        <img src="assets/images/ImgBoxotel.png" alt="" />
+                    </div>
+                                        <div class="swiper-slide">
+                        <img src="assets/images/ImgBoxotel.png" alt="" />
+                    </div>
+                                        <div class="swiper-slide">
+                        <img src="assets/images/ImgBoxotel.png" alt="" />
+                    </div>
+                                        <div class="swiper-slide">
                         <img src="assets/images/ImgBoxotel.png" alt="" />
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    
 </section>
 
-<section class="loisirs">
+<section class="loisirs white-bg">
     <div class="wrapper">
         <div class="title">
             <p>03</p>
@@ -180,7 +217,7 @@
         <h2>Mes loisirs</h2>
     </div>
 
-    <div class="swiper loisirs__swiper loisirs__snowboard" data-component="Swiper">
+    <div class="swiper loisirs__swiper loisirs__snowboard" data-component="Carousel" data-wordbanner >
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <p class="loisirs__texte active">SNOWBOARD</p>
@@ -194,7 +231,7 @@
         </div>
     </div>
 
-    <div class="swiper loisirs__swiper loisirs__programmtion" data-component="Swiper">
+    <div class="swiper loisirs__swiper loisirs__programmtion" data-component="Carousel" data-wordbanner>
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <p class="loisirs__texte">PROGRAMMATION</p>
@@ -205,10 +242,13 @@
             <div class="swiper-slide">
                 <p class="loisirs__texte">PROGRAMMATION</p>
             </div>
+            <div class="swiper-slide">
+                <p class="loisirs__texte">PROGRAMMATION</p>
+            </div>
         </div>
     </div>
 
-    <div class="swiper loisirs__swiper loisirs__lecture" data-component="Swiper">
+    <div class="swiper loisirs__swiper loisirs__lecture" data-component="Carousel" data-wordbanner>
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <p class="loisirs__texte">LECTURE</p>
@@ -219,6 +259,10 @@
             <div class="swiper-slide">
                 <p class="loisirs__texte active">LECTURE</p>
             </div>
+            <div class="swiper-slide">
+                <p class="loisirs__texte">LECTURE</p>
+            </div>
+
         </div>
     </div>
 </section>
@@ -232,7 +276,7 @@
 
         <h2>Vidéo de présentation</h2>
 
-        <div class="thumbnail">
+        <div class="thumbnail img-grad-double">
             <div class="video" data-component="Youtube" data-video-id="9sE4ezExzoM">
                 <div class="video__media js-video">
                     <img class="js-poster" src="./assets/images/ImgBoxotel.png" alt="Une vidéo de présentation" />
@@ -253,7 +297,7 @@
         </div>
 
         <h2>Mon prochain défi : Peut-être le vôtre</h2>
-        <aside>
+        <div class="aside">
             <p>
                 Je suis à la recherche d’un stage en
                 <strong>développement web ou en design</strong>
@@ -261,7 +305,7 @@
                 <strong>personnes du milieu, développer mes capacités à travailler en équipe</strong>
                 et améliorer mon utilisation de GitHub.
             </p>
-        </aside>
+        </div>
     </div>
 </section>
 

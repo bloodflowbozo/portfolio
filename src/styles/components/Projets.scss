@@ -1,0 +1,58 @@
+.projets{
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        min-width: 0;
+
+        .projets__swiper{
+            padding-left: 25px;
+            padding-right: 25px;
+            width: 100%;
+            padding-bottom: 100px;
+
+            .swiper-slide{
+                position: relative;
+                width: 100%;
+
+                .texte{
+                    position: absolute;
+                    left: -25px;
+                    top: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    
+
+                    p{
+                        margin: 0;
+                    }
+                }
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .swiper-scrollbar{
+
+                border: 1px solid rgba($color: #fff, $alpha: .2);
+                height: 10px;
+                border-radius: 0px;
+                padding: 1px;
+                width: calc(100% - 50px);
+                overflow: hidden;
+                left: 25px;
+                top: 90%;
+
+                .swiper-scrollbar-drag{
+                    background-color: var(--color-primary);
+                    width: 33%;
+                    border-radius: 0px;
+                }
+
+
+            }
+        }
+    }
+}

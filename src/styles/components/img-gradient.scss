@@ -1,0 +1,28 @@
+.img-grad{
+       border-left: 1px solid;
+       border-bottom: 1px solid;
+    border-image: linear-gradient(
+        35deg,
+        
+        rgba(255, 255, 255, .8) 0%,
+        rgba(153, 153, 153, 0) 50%,
+    ) 1;
+}
+
+.img-grad-double{
+    transition: .3s all ease-out;
+    border: 1px solid #fff;
+    
+    border-image: linear-gradient(
+        45deg,
+        
+        rgba(255, 255, 255, .8) 0%,
+        rgba(153, 153, 153, 0) 24%,
+        rgba(153, 153, 153, 0) 76%,
+        rgba(255, 255, 255, .8) 100%,
+    ) 1;
+
+    &:hover{
+        border: 1px solid #fff;
+    }
+}

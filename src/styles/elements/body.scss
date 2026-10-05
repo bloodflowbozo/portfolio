@@ -8,7 +8,7 @@ body {
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
-    rgba(12, 19, 21, 1) 50%,
+    rgb(9, 14, 15) 50%,
     rgba(0, 0, 0, 1) 100%
   );
   color: var(--color-black);
@@ -17,4 +17,9 @@ body {
   line-height: 1.6;
 
   overflow-x: hidden;
+
+  .aside{
+    padding-left: 75px;
+    margin-top: 40px;
+  }
 }

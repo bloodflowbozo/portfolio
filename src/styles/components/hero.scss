@@ -6,12 +6,27 @@
         padding: 50px 0;
 
         .hero__media {
-            img {
-                position: absolute;
-                height: 95%;
-                right: 0;
+            position: absolute;
+                            right: 0;
                 top: 0;
                 z-index: 2;
+                aspect-ratio: 1/1;
+            img {
+                
+                height: 95%;
+                aspect-ratio: 1/1;
+
+            }
+        }
+
+        .hero__content{
+
+            .hero__caption{
+                border-left: 1px solid rgba($color: #fff, $alpha: 0.2);
+                padding: 10px;
+                p{
+                    margin: 0;
+                }
             }
         }
     }

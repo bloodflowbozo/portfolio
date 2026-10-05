@@ -1,7 +1,11 @@
 /* ==========================================================================
    video / component
    ========================================================================== */
-
+    .thumbnail{
+        padding: 20px;
+        height: fit-content;
+        margin-top: 20px;
+    }
 .video {
     color: var(--color-white);
     text-align: center;
@@ -9,7 +13,9 @@
     
     position: relative;
     cursor: pointer;
-    margin: 50px 0px;
+    
+
+
 
     img {
         object-fit: cover;
@@ -28,8 +34,8 @@
         transform-origin: 0 0;
         transform: translate(-50%, -50%);
         z-index: 2;
-        width: typo(60px,140px);
-        height: typo(60px,140px);
+        width: typo(60px,80px);
+        height: typo(60px,80px);
 
         .is-video-ready & {
             opacity: 1;
@@ -37,7 +43,7 @@
     }
 
     &:hover .icon {
-        transform: scale(0.8) translate(-50%, -50%);
+        transform: scale(1.2) translate(-50%, -50%);
     }
 
     iframe{

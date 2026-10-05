@@ -92,7 +92,7 @@
     }
 }
 
-.header {
+.header, .footer {
     .flex {
         display: flex;
         justify-content: space-between;
@@ -150,6 +150,10 @@
         font-style: italic;
         color: var(--color-white);
         font-family: var(--font-primary);
+
+        &:hover{
+            color: var(--color-primary);
+        }
     }
 }
 
