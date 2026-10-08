@@ -1,64 +1,62 @@
-.projets{
-    .wrapper{
+.projets {
+    .wrapper {
         display: flex;
         flex-direction: column;
         gap: 40px;
-        
 
-        .projets__swiper{
+        .projets__swiper {
             padding-left: 25px;
             padding-right: 25px;
             width: 100%;
-            
 
-            .swiper-slide{
+            .js-panel,
+            .swiper-slide {
                 position: relative;
                 width: 100%;
 
-                .texte{
+                .texte {
                     position: absolute;
                     left: -25px;
                     top: 20px;
                     display: flex;
                     flex-direction: column;
-                    
 
-                    p{
+                    p {
                         margin: 0;
-                        transition: all .3s ease-in-out;
+                        transition: all 0.3s ease-in-out;
                         z-index: 1;
                     }
 
-                    h4{
-                        transition: all .3s ease-in-out;
+                    h4 {
+                        transition: all 0.3s ease-in-out;
                         z-index: 1;
                     }
                 }
 
-                img{
+                img {
                     width: 100%;
                     height: 100%;
                     z-index: -1;
 
-                    transition: all .3s ease-in-out;
+                    transition: all 0.3s ease-in-out;
                 }
 
-                &:hover{
-                    p,h4{
+                &:hover {
+                    p,
+                    h4 {
                         color: var(--color-primary);
                         z-index: 1;
                     }
 
-                    img{
+                    img {
                         scale: 1.05;
                         z-index: -1;
                     }
                 }
             }
 
-            .swiper-scrollbar{
-
-                border: 1px solid rgba($color: #fff, $alpha: .2);
+            .swiper-scrollbar {
+                border: 1px solid rgba($color: #fff, $alpha: 0.2);
                 height: 10px;
                 border-radius: 0px;
                 padding: 1px;
@@ -70,49 +68,69 @@
                 margin-right: auto;
                 margin-top: 40px;
 
-                .swiper-scrollbar-drag{
+                .swiper-scrollbar-drag {
                     background-color: var(--color-primary);
                     width: 33%;
                     border-radius: 0px;
                 }
-
-
             }
         }
-
-
     }
 }
 
+.gsap-projets {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-.projet-autre{
-    .wrapper{
+    padding-bottom: 0;
+    padding-top: 0;
 
+    .projets .wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Horizontal Track holding panels */
+    .js-horiz {
+        display: flex;
+        flex-wrap: nowrap;
+        width: max-content; /* Allows track to overflow horizontally */
+        will-change: transform;
+    }
+
+    .js-panel {
+        flex-shrink: 0;
+        width: 100vw; /* or 100vw depending on layout design */
+        margin-right: 200px;
+    }
+}
+
+.projet-autre {
+    .wrapper {
         display: flex;
         flex-direction: column;
         gap: 40px;
-        
-                .autre{
-                        padding-left: 90px;
+
+        .autre {
+            padding-left: 90px;
             padding-right: 90px;
 
-            .swiper-slide{
-                .texte{
+            .swiper-slide {
+                .texte {
                     left: -90px;
                 }
             }
-
-
-
         }
 
-                
-
-                .bouton{
-                    margin-left: auto;
-                }
-                
-            
+        .bouton {
+            margin-left: auto;
+        }
     }
-
 }

@@ -4,25 +4,36 @@ section {
     position: relative;
 }
 
-.white-bg{
+.white-bg {
     background-color: #f3f3f3;
 
-    h2{
+    h2 {
         -webkit-text-stroke: 1px var(--color-black);
         color: transparent;
     }
 
-    p{
+    p {
         color: var(--color-black);
     }
 
-    .bar{
-        border-bottom-color:var(--color-black) ;
+    .bar {
+        border-bottom-color: var(--color-black);
+    }
+}
+
+.js-horiz {
+    display: flex;
+    flex-wrap: nowrap;
+    width: fit-content;
+    .js-panel {
+        height: 100vh;
+        width: 100vw;
+        flex-shrink: 0;
     }
 }
 
 @media screen and (max-width: $breakpoint-xs) {
-    section{
+    section {
         padding-top: 55px;
         padding-bottom: 55px;
     }

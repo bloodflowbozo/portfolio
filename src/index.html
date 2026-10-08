@@ -10,7 +10,7 @@
                         <br />
                         Lamontagne
                     </h1>
-                    <h1 class="stroke">
+                    <h1 class="stroke" data-component="TextAnim" data-repeat>
                         Zack
                         <br />
                         Lamontagne
@@ -39,40 +39,35 @@
     </div>
 </section>
 
-<section class="projets" id="projet">
+<section class="projets gsap-projets" id="projet" data-component="Scroller">
     <div class="wrapper">
         <h2>Projets & Réalisations</h2>
 
-        <div class="swiper projets__swiper" data-component="Carousel">
-            <div class="swiper-wrapper">
-                <a class="swiper-slide" href="Boxotel.html">
-                    <div class="texte">
-                        <h4>Refonte du site web de Boxotel</h4>
-                        <p>Repenser le site avec une approche fonctionnelle tout en conservant son identité visuelle.</p>
-                    </div>
+        <div class="projets__swiper js-horiz">
+            <a class="js-panel" href="Boxotel.html">
+                <div class="texte">
+                    <h4>Refonte du site web de Boxotel</h4>
+                    <p>Repenser le site avec une approche fonctionnelle tout en conservant son identité visuelle.</p>
+                </div>
 
-                    <img src="assets/images/ImgBoxotel.png" alt="Projet de refonte du site web de Boxotel" />
-                </a>
-                <a class="swiper-slide">
-                    <div class="texte">
-                        <h4>Refonte du site web de Boxotel</h4>
-                        <p>Repenser le site avec une approche fonctionnelle tout en conservant son identité visuelle.</p>
-                    </div>
+                <img src="assets/images/ImgBoxotel.png" alt="Projet de refonte du site web de Boxotel" />
+            </a>
+            <a class="js-panel">
+                <div class="texte">
+                    <h4>Refonte du site web de Boxotel</h4>
+                    <p>Repenser le site avec une approche fonctionnelle tout en conservant son identité visuelle.</p>
+                </div>
 
-                    <img src="assets/images/ImgBoxotel.png" alt="Projet de refonte du site web de Boxotel" />
-                </a>
-                <a class="swiper-slide">
-                    <div class="texte">
-                        <h4>Refonte du site web de Boxotel</h4>
-                        <p>Repenser le site avec une approche fonctionnelle tout en conservant son identité visuelle.</p>
-                    </div>
+                <img src="assets/images/ImgBoxotel.png" alt="Projet de refonte du site web de Boxotel" />
+            </a>
+            <a class="js-panel">
+                <div class="texte">
+                    <h4>Refonte du site web de Boxotel</h4>
+                    <p>Repenser le site avec une approche fonctionnelle tout en conservant son identité visuelle.</p>
+                </div>
 
-                    <img src="assets/images/ImgBoxotel.png" alt="Projet de refonte du site web de Boxotel" />
-                </a>
-            </div>
-
-            
-            <div class="swiper-scrollbar"></div>
+                <img src="assets/images/ImgBoxotel.png" alt="Projet de refonte du site web de Boxotel" />
+            </a>
         </div>
     </div>
 </section>
@@ -85,30 +80,26 @@
         </div>
 
         <div class="media-texte">
+            <div class="media__texte">
+                <h2>En gros, je suis qui?</h2>
 
-       
+                <p>
+                    Je contribue au développement et à la création de projets grâce à ma passion pour la
+                    <strong>programmation</strong>
+                    et à ma capacité à proposer des
+                    <strong>idées innovantes</strong>
+                    . Mes compétences peuvent être mises à profit dans différents domaines, notamment au sein d’entreprises spécialisées dans le
+                    <strong>jeu vidéo, d’agences web</strong>
+                    ou encore dans le
+                    <strong>développement d’applications</strong>
+                    .
+                </p>
+            </div>
 
-        <div class="media__texte">
-            <h2>En gros, je suis qui?</h2>
-
-            <p>
-                Je contribue au développement et à la création de projets grâce à ma passion pour la
-                <strong>programmation</strong>
-                et à ma capacité à proposer des
-                <strong>idées innovantes</strong>
-                . Mes compétences peuvent être mises à profit dans différents domaines, notamment au sein d’entreprises spécialisées dans le
-                <strong>jeu vidéo, d’agences web</strong>
-                ou encore dans le
-                <strong>développement d’applications</strong>
-                .
-            </p>
+            <div class="media__media img-grad">
+                <img src="assets/images/enfant.png" alt="Photo de Zack lorsqu'il était enfant" />
+            </div>
         </div>
-
-        <div class="media__media img-grad">
-            <img src="assets/images/enfant.png" alt="Photo de Zack lorsqu'il était enfant" />
-        </div>
-
-         </div>
     </div>
 </section>
 
@@ -175,51 +166,50 @@
                 <p class="qualités__bottom light">Apprendre — explorer — créer</p>
             </div>
         </div>
-</div>
-        <div class="logiciels">
-            <div class="wrapper">
-                <h2>Logiciels maîtrisés</h2>
-            </div>
+    </div>
+    <div class="logiciels">
+        <div class="wrapper">
+            <h2>Logiciels maîtrisés</h2>
+        </div>
 
-            <div class="swiper logiciels__swiper" data-component="Carousel" data-banner>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="assets/images/premiere.png" alt="" />
-                    </div>
-                                        <div class="swiper-slide">
-                        <img src="assets/images/arduino.png" alt="" />
-                    </div>
-                                        <div class="swiper-slide">
-                        <img src="assets/images/vs.png" alt="" />
-                    </div>
-                                        <div class="swiper-slide">
-                        <img src="assets/images/illustrator.png" alt="" />
-                    </div>
-                                        <div class="swiper-slide">
-                        <img src="assets/images/wordpress.png" alt="" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="assets/images/unity.png" alt="" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="assets/images/aftereffect.png" alt="" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="assets/images/photoshop.png" alt="" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="assets/images/unreal.png" alt="" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="assets/images/figma.png" alt="" />
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="assets/images/blender.png" alt="" />
-                    </div>
+        <div class="swiper logiciels__swiper" data-component="Carousel" data-banner>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="assets/images/premiere.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/arduino.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/vs.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/illustrator.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/wordpress.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/unity.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/aftereffect.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/photoshop.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/unreal.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/figma.png" alt="" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/blender.png" alt="" />
                 </div>
             </div>
         </div>
-    
+    </div>
 </section>
 
 <section class="loisirs white-bg">
@@ -232,7 +222,7 @@
         <h2>Mes loisirs</h2>
     </div>
 
-    <div class="swiper loisirs__swiper loisirs__snowboard" data-component="Carousel" data-wordbanner >
+    <div class="swiper loisirs__swiper loisirs__snowboard" data-component="Carousel" data-wordbanner>
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <p class="loisirs__texte active">SNOWBOARD</p>
@@ -280,7 +270,6 @@
             <div class="swiper-slide">
                 <p class="loisirs__texte">LECTURE</p>
             </div>
-
         </div>
     </div>
 </section>

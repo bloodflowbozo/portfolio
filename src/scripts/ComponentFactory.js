@@ -4,6 +4,8 @@ import Scrolly from './components/scrolly.js';
 import Form from './components/form.js';
 import Carousel from './components/Carousel.js';
 import Header from './components/Header.js';
+import TextAnim from './components/TextAnim.js';
+import Scroller from './components/Scroller.js';
 
 export default class ComponentFactory {
   constructor() {
@@ -14,6 +16,8 @@ export default class ComponentFactory {
       Carousel: Carousel,
       Form: Form,
       Header: Header,
+      TextAnim: TextAnim,
+      Scroller: Scroller,
     };
     this.init();
   }

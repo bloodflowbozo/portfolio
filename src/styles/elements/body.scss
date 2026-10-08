@@ -5,21 +5,27 @@
    ========================================================================== */
 
 body {
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgb(9, 14, 15) 50%,
-    rgba(0, 0, 0, 1) 100%
-  );
-  color: var(--color-black);
-  font-family: var(--font-secondary);
-  font-size: var(--font-size-content);
-  line-height: 1.6;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgb(9, 14, 15) 50%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    color: var(--color-black);
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-content);
+    line-height: 1.6;
 
-  overflow-x: hidden;
+    overflow-x: hidden;
 
-  .aside{
-    padding-left: 75px;
-    margin-top: 40px;
-  }
+    .aside {
+        padding-left: 75px;
+        margin-top: 40px;
+    }
+}
+
+html,
+#smooth-wrapper,
+#smooth-content {
+    background-color: transparent;
 }
