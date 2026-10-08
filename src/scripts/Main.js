@@ -1,6 +1,7 @@
 import Icons from './utils/Icons.js';
 
 import ComponentFactory from './ComponentFactory.js';
+import './components/stars.js';
 
 class Main {
   constructor() {
