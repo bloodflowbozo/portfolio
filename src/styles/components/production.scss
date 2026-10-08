@@ -1,0 +1,130 @@
+.production{
+
+    .img-grad{
+        padding-left: 20px;
+        padding-bottom: 15px;
+    }
+    .wrapper{
+            display: flex;
+    flex-direction: column;
+    gap: 200px;
+
+    .textetop{
+        .textetop__conteneur{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+                    .media__texte{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        }
+
+    }
+
+    .mediabullet{
+        .media-bullet{
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            align-items: center;
+            .media__texte{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .bullets{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    p{
+                        margin: 0;
+                    }
+
+                    .bar{
+                        height: 0;
+                        width: 100%;
+                        border-bottom: 1px solid rgba($color: #fff, $alpha: .2);
+                        margin-top: 10px;
+                    }
+
+                    .light{
+                        font-weight: 500;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .textcode{
+
+        .text-code{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+
+            .content{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .code{
+                height: 100%;
+                width: 100%;
+                .cp_embed_wrapper{
+                        height: 100%;
+                        width: 100%;
+                    iframe{
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .final{
+        .final__conteneur{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+
+            
+
+            .final__top{
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                align-items: center;
+                width: 100%;
+            }
+
+
+            .final__bottom{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                max-width: 100%;
+                object-fit: cover;
+
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+
+    }
+}

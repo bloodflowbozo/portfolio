@@ -7,7 +7,7 @@ export default class Carousel {
     this.element = element;
     this.options = {
       slidesPerView: 1,
-      spaceBetween: 50,
+      spaceBetween: 200,
       pagination: {
         el: this.element.querySelector('.swiper-pagination'),
       },
@@ -93,6 +93,28 @@ export default class Carousel {
       
       wordBannerCount += 1
     }
+
+         if ('infobanner' in this.element.dataset) {
+      this.options = {
+        slidesPerView: '2',
+        spaceBetween: 100,
+        loop: true,
+        speed: 5000,
+        allowTouchMove: true,
+
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            
+        },
+        
+      };
+
+      
+     
+    }
+
+    
   }
 
   init() {

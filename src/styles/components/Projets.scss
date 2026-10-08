@@ -3,13 +3,13 @@
         display: flex;
         flex-direction: column;
         gap: 40px;
-        min-width: 0;
+        
 
         .projets__swiper{
             padding-left: 25px;
             padding-right: 25px;
             width: 100%;
-            padding-bottom: 100px;
+            
 
             .swiper-slide{
                 position: relative;
@@ -40,10 +40,13 @@
                 height: 10px;
                 border-radius: 0px;
                 padding: 1px;
-                width: calc(100% - 50px);
+                width: 400px;
                 overflow: hidden;
-                left: 25px;
-                top: 90%;
+
+                position: relative;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 40px;
 
                 .swiper-scrollbar-drag{
                     background-color: var(--color-primary);
@@ -54,5 +57,40 @@
 
             }
         }
+
+
     }
+}
+
+
+.projet-autre{
+    .wrapper{
+
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        
+                .autre{
+                        padding-left: 90px;
+            padding-right: 90px;
+
+            .swiper-slide{
+                .texte{
+                    left: -90px;
+                }
+            }
+
+
+
+        }
+
+                
+
+                .bouton{
+                    margin-left: auto;
+                }
+                
+            
+    }
+
 }
