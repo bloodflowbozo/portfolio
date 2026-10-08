@@ -77,11 +77,15 @@
     }
 
     .header-is-hidden.is-scrolling-down:not(.nav-is-active) & {
-        background-color: var(--color-white);
+        background-color: #f3f3f3;
         background-image: none;
-        p,
+        p, a,
         .tittle {
             color: var(--color-black);
+
+            &:hover {
+                color: var(--color-primary);
+            }
         }
         span {
             background: var(--color-black);
@@ -89,6 +93,9 @@
         .chevron {
             color: var(--color-bg-primary);
         }
+
+
+        
     }
 }
 
@@ -109,7 +116,7 @@
         list-style-type: none;
         display: flex;
         flex-direction: row;
-        gap: 10px;
+        gap: 20px;
         align-items: center;
         li {
             display: flex;
@@ -123,6 +130,11 @@
         }
         a {
             font-size: typo(15px);
+            transition: 0.3s all ease-out;
+        }
+
+        li{
+            transition: 0.3s all ease-out;
         }
     }
 

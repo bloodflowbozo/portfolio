@@ -61,7 +61,7 @@ export default class Carousel {
         slidesPerView: '5',
         spaceBetween: 50,
         loop: true,
-        speed: 5000,
+        speed: 3000,
         allowTouchMove: false,
 
         autoplay: {
@@ -99,7 +99,7 @@ export default class Carousel {
         slidesPerView: '2',
         spaceBetween: 100,
         loop: true,
-        speed: 5000,
+        speed: 3000,
         allowTouchMove: true,
 
         autoplay: {
