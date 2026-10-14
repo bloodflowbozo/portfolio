@@ -102,7 +102,7 @@ function animate() {
 
     // Explode when close enough
     if (distance < EXPLOSION_DISTANCE) {
-      explode(star.x, star.y);
+      explode(star.x, star.y,star.size);
       stars.splice(i, 1);
       stars.push(createStar());
       console.log(stars.length);
@@ -161,7 +161,7 @@ function animate() {
   requestAnimationFrame(animate);
 }
 
-function explode(x, y) {
+function explode(x, y,start_size) {
   for (let i = 0; i < EXPLOSION_COUNT; i++) {
     const angle = Math.random() * Math.PI * 2;
     const speed = Math.random() * 2.5 + 0.5;
@@ -173,7 +173,7 @@ function explode(x, y) {
       vx: Math.cos(angle) * speed,
       vy: Math.sin(angle) * speed,
 
-      size: Math.random() * 1.5 + 0.5,
+      size: Math.random() * 1.5 + start_size/5,
       alpha: 1,
 
       decay: Math.random() * 0.025 + 0.015,
