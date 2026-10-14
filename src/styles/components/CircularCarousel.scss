@@ -1,3 +1,10 @@
+.circular__carousel{
+    .bouton{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 .circular-carousel {
   --cc-fade: #000000;
   --cc-radius: 12px;
@@ -157,6 +164,8 @@
     font-size: var(--font-size-h4);
   }
 }
+
+
 
 .circular-carousel__subtitle {
   font-weight: 400;

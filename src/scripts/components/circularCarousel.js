@@ -24,6 +24,25 @@
  * Programmatic usage:
  *   const carousel = new CircularCarousel('#carousel', { items: [...], preset: 'panorama' });
  *   Methods: next(), prev(), goTo(index), getActive(), update(options), destroy()
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * for data to be accessed by the script : around line 976
+ * 
+ * to modify the captions/tittle : _syncCaption
+ * 
+ * 
+ * to modify the counter : _setDigits
+ * 
+ * for carouse paramets : line 75
+ * 
+ * 
+ * 
  */
 (function (global, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory();
@@ -34,16 +53,16 @@
   const photo = id => 'https://images.unsplash.com/' + id + '?w=900&q=80&auto=format&fit=max&sat=-100';
 
   const DEFAULT_ITEMS = [
-    { src: photo('photo-1506744038136-46273834b3fb'), alt: 'Mist drifting through a mountain valley', title: 'Valley', subtitle: 'Landscape' },
-    { src: photo('photo-1524504388940-b1c1722653e1'), alt: 'A woman with long hair in soft studio light', title: 'Portrait', subtitle: 'Studio' },
-    { src: photo('photo-1486406146926-c627a92ad1ab'), alt: 'Glass towers seen from street level', title: 'Towers', subtitle: 'Architecture' },
-    { src: photo('photo-1502680390469-be75c86b636f'), alt: 'A surfer carving inside a breaking wave', title: 'Swell', subtitle: 'Ocean' },
-    { src: photo('photo-1487958449943-2429e8be8625'), alt: 'An angular white building against the sky', title: 'Facade', subtitle: 'Architecture' },
-    { src: photo('photo-1509631179647-0177331693ae'), alt: 'A model in striped trousers leaning on a wall', title: 'Pose', subtitle: 'Editorial' },
-    { src: photo('photo-1519681393784-d120267933ba'), alt: 'The Milky Way above snowy peaks', title: 'Night', subtitle: 'Sky' },
-    { src: photo('photo-1485968579580-b6d095142e6e'), alt: 'A woman in a long coat on a city street', title: 'Street', subtitle: 'Editorial' },
-    { src: photo('photo-1493246507139-91e8fad9978e'), alt: 'Mountains mirrored in a still lake', title: 'Mirror', subtitle: 'Landscape' },
-    { src: photo('photo-1511818966892-d7d671e672a2'), alt: 'A glass skyscraper under a cloudy sky', title: 'Glass', subtitle: 'Architecture' }
+    { src: photo('photo-1506744038136-46273834b3fb'), alt: 'Mist drifting through a mountain valley', title: 'Valley', subtitle: 'Landscape', link: '#'},
+    { src: photo('photo-1524504388940-b1c1722653e1'), alt: 'A woman with long hair in soft studio light', title: 'Portrait', subtitle: 'Studio', link: '#' },
+    { src: photo('photo-1486406146926-c627a92ad1ab'), alt: 'Glass towers seen from street level', title: 'Towers', subtitle: 'Architecture', link: '#' },
+    { src: photo('photo-1502680390469-be75c86b636f'), alt: 'A surfer carving inside a breaking wave', title: 'Swell', subtitle: 'Ocean', link: '#' },
+    { src: photo('photo-1487958449943-2429e8be8625'), alt: 'An angular white building against the sky', title: 'Facade', subtitle: 'Architecture', link: '#' },
+    { src: photo('photo-1509631179647-0177331693ae'), alt: 'A model in striped trousers leaning on a wall', title: 'Pose', subtitle: 'Editorial', link: '#' },
+    { src: photo('photo-1519681393784-d120267933ba'), alt: 'The Milky Way above snowy peaks', title: 'Night', subtitle: 'Sky', link: '#' },
+    { src: photo('photo-1485968579580-b6d095142e6e'), alt: 'A woman in a long coat on a city street', title: 'Street', subtitle: 'Editorial', link: '#' },
+    { src: photo('photo-1493246507139-91e8fad9978e'), alt: 'Mountains mirrored in a still lake', title: 'Mirror', subtitle: 'Landscape', link: '#' },
+    { src: photo('photo-1511818966892-d7d671e672a2'), alt: 'A glass skyscraper under a cloudy sky', title: 'Glass', subtitle: 'Architecture', link: '#' }
   ];
 
   const PRESETS = {
@@ -431,6 +450,7 @@
 
       const title = el('span', 'circular-carousel__title');
       const name = el('span', 'circular-carousel__name');
+
       name.textContent = current.title || current.alt || '';
       title.appendChild(name);
       if (current.subtitle) {
@@ -442,7 +462,14 @@
       else this.caption.insertBefore(title, this._counter);
       this._titleEl = title;
 
+      const section = this.container.parentElement;
+      const bouton = section.querySelector(".bouton")
+      console.log(current);
+      bouton.href = current.link;
+
       this._setDigits(this.active + 1);
+
+
     }
 
     _setDigits(value) {
@@ -964,7 +991,8 @@
         src: img.getAttribute('src'),
         alt: img.getAttribute('alt') || '',
         title: img.getAttribute('data-title') || undefined,
-        subtitle: img.getAttribute('data-subtitle') || undefined
+        subtitle: img.getAttribute('data-subtitle') || undefined,
+        link: img.getAttribute('data-link') || undefined
       }));
     }
     return null;
@@ -979,6 +1007,7 @@
       if (node.circularCarousel) return;
 
       const options = {};
+      console.log(node.dataset);
       for (const key in node.dataset) {
         if (key === 'component' || key === 'items') continue;
         options[key] = parseValue(key, node.dataset[key]);
