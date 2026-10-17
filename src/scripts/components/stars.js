@@ -11,7 +11,7 @@ const EXPLOSION_DISTANCE = 18;
 const EXPLOSION_COUNT = 12;
 const CURSOR_RADIUS = 200;
 
-const STAR_COUNT = 180;
+let STAR_COUNT = Math.floor(window.innerWidth/10);
 // Attraction radius
 const radius = 200;
 
@@ -31,7 +31,7 @@ window.addEventListener('mouseleave', () => {
 });
 
 function resize() {
-  console.log('resize');
+  STAR_COUNT = Math.floor(window.innerWidth/10);
   const dpr = window.devicePixelRatio || 1;
 
   width = window.innerWidth;

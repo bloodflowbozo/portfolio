@@ -29,3 +29,10 @@ html,
 #smooth-content {
     background-color: transparent;
 }
+
+
+@media screen and (max-width: $breakpoint-sm) {
+    body{
+        line-height: 1;
+    }
+}

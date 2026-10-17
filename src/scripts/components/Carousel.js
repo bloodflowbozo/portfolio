@@ -58,7 +58,7 @@ export default class Carousel {
 
         if ('banner' in this.element.dataset) {
       this.options = {
-        slidesPerView: '5',
+        slidesPerView: '2',
         spaceBetween: 50,
         loop: true,
         speed: 3000,
@@ -67,6 +67,20 @@ export default class Carousel {
         autoplay: {
             delay: 0,
             disableOnInteraction: false,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 50,
+          },
         },
         
       };

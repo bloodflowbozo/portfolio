@@ -101,11 +101,59 @@
     }
 }
 
-@media screen and (max-width: $breakpoint-xs) {
+@media screen and (max-width: $breakpoint-sm) {
     .footer{
-        .menu__footer{
-            gap: 20px;
-            padding-left: 0px;
+        .wrapper{
+            
+            .third{
+                ul{
+                    gap: 0px;
+                    li{
+                        svg{
+                            scale: 0.6;
+                        }
+                    }
+
+                    
+                }
+
+                p,a{
+                    scale: 0.8;
+                }
+            }
+
+
+            .second{
+                .hub{
+                    
+                    a{
+                        scale: 0.6;
+                    }
+
+                    
+                }
+            }
+
+            .flex{
+                ul{
+                    gap: 10px;
+                    li{
+                        scale: 0.7;
+                    }
+                }
+
+            }
+
+
+            .bouton{
+                width: fit-content;
+                padding-left: 16px;
+                padding-right: 16px;
+                padding-bottom: 10px;
+                        :nth-child(1){
+                            display: none;
+                        }
+                    }
         }
     }
 }

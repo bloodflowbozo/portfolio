@@ -56,12 +56,25 @@
                 transform: rotate(-45deg);
             }
         }
+
+        .nav-active{
+            display: flex;
+
+        }
+    }
+
+
+    &:hover :nth-child(1) {
+        transform: translateX(8px);
+    }
+        &:hover :nth-child(3) {
+        transform: translateX(-8px);
     }
 }
 
 .header {
     --header-heigth: 85px;
-
+    background-color: var(--color-black);
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -97,6 +110,37 @@
 
         
     }
+    
+    .nav-active{
+        background-color: rgba($color: #1b1b1b, $alpha: 1.0);
+        display: flex;
+        flex-direction: column;
+        
+
+        transition: all .3s ease-in-out;
+
+        transform: translateY(-320px);
+        z-index: 3;
+        overflow: hidden;
+        display: none;
+
+        .hub-active{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .menu-active{
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+        }
+    }
+
+
+
 }
 
 .header, .footer {
@@ -104,6 +148,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        z-index: 4;
     }
 
     p {
@@ -169,14 +215,25 @@
     }
 }
 
-@media screen and (max-width: $breakpoint-sm) {
+@media screen and (max-width: $breakpoint-md) {
     .header {
         padding: 0;
-        .langue {
+        .hub {
             display: none;
         }
-        p {
+        .menu {
             display: none;
+        }
+
+        .nav-active{
+            display: flex;
+        }
+
+        .hub-active{
+            display: flex;
+        }
+        .menu-active{
+            display: flex;
         }
 
         .flex {
@@ -184,7 +241,21 @@
             height: 100%;
         }
 
-        .wrapper {
+        .js-toggle{
+            display: flex;
+        }
+    }
+}
+
+
+
+.nav-is-active{
+    .header{
+        .wrapper{
+            .nav-active{
+                
+                transform: translateY(0);
+            }
         }
     }
 }

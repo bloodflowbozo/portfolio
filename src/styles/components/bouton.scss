@@ -47,3 +47,11 @@
         }
     }
 }
+
+
+
+@media screen and (max-width: $breakpoint-sm) {
+    .bouton{
+        width: 150px;
+    }
+}

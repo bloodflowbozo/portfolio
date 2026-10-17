@@ -49,7 +49,7 @@
                     }
 
                     img {
-                        scale: 1.05;
+                        scale: 1.01;
                         z-index: -1;
                     }
                 }
@@ -131,6 +131,34 @@
 
         .bouton {
             margin-left: auto;
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: $breakpoint-sm) {
+    .projet-autre{
+        .wrapper{
+            gap: 10px;
+            h2{
+                margin-bottom: 20px;
+            }
+            .autre{
+                padding-left: 0px;
+                padding-right: 0px;
+
+                .swiper-slide {
+                .texte {
+                    position: static;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    margin-bottom: 20px;
+                }
+            }
+            }
         }
     }
 }

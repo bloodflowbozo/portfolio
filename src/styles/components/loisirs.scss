@@ -14,7 +14,7 @@
             }
         }
         .loisirs__texte{
-            font-size: typo(140px);
+            font-size: typo(80px,140px);
             font-style: italic;
             letter-spacing: 0px;
             font-family: var(--font-primary);
@@ -28,5 +28,12 @@
             -webkit-text-stroke: 1px var(--color-primary);
             color: transparent;
         }
+    }
+}
+
+
+@media screen and (max-width: $breakpoint-sm) {
+    .media-texte{
+        grid-template-columns: 1fr;
     }
 }

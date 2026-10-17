@@ -128,3 +128,41 @@
 
     }
 }
+
+
+
+
+
+
+@media screen and (max-width: $breakpoint-sm) {
+    .production{
+        .wrapper{
+            gap: 80px;
+
+
+            .mediabullet{
+                .media-bullet{
+                    flex-direction: column;
+                }
+            }
+
+            .textcode{
+                .text-code{
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr 1fr;
+                }
+            }
+
+            .final{
+                .final__conteneur{
+                    .final__bottom{
+                        grid-template-columns: 1fr;
+                        grid-template-rows: 1fr 1fr;
+                    }
+
+                 
+                }
+            }
+        }
+    }
+}

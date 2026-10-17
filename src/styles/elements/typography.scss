@@ -19,7 +19,7 @@ h1 {
     color: var(--color-white);
     font-weight: 500;
     letter-spacing: 2.5%;
-    line-height: 150px;
+    
 }
 
 h2 {
@@ -56,7 +56,7 @@ h4 {
 
 
 .light{
-    font-size: 32px;
+    font-size: typo(24px,32px);
     font-weight: 100;
     
 }
@@ -75,8 +75,15 @@ h4 {
     }
 
     P{
-            font-size: 32px;
-    font-weight: 100;
+        font-size: typo(24px,32px);
+        font-weight: 100;
     
+    }
+}
+
+
+@media screen and (max-width: $breakpoint-sm) {
+    .title{
+        margin-bottom: 15px;
     }
 }

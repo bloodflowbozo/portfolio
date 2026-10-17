@@ -77,3 +77,31 @@
         }
     }
 }
+
+@media screen and (max-width: $breakpoint-sm) {
+    .skills__top{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 25px;
+        .interets{
+            border-right: 0px;
+            border-bottom: 1px solid var(--color-black);
+            padding-bottom: 25px;
+        }
+    }
+
+    .logiciels{
+            .logiciels__swiper{
+
+                .swiper-slide{
+                    height: fit-content;
+                    width: fit-content;
+                }
+                    img{
+                        aspect-ratio: 1/1;
+                        width: 220px;
+                        height: 220px;
+                    }
+    }
+    }
+}

@@ -28,3 +28,10 @@
         gap: 50px;
     }
 }
+
+
+@media screen and (max-width: $breakpoint-sm) {
+    .media-texte{
+        grid-template-columns: 1fr;
+    }
+}

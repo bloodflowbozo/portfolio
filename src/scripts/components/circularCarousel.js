@@ -76,7 +76,7 @@
     items: null,
     preset: 'panorama',
     intro: 'rise', // 'rise' | 'assemble' | 'spin' | 'none'
-    cardWidth: 500,
+    cardWidth: 300,
     aspectRatio: 1.33,
     gap: 25,
     curve: 1,
