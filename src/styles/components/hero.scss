@@ -9,7 +9,7 @@
             position: absolute;
             right: 0;
             top: 0;
-            z-index: 2;
+            z-index: 0;
             aspect-ratio: 1/1;
             img {
                 height: 95%;
@@ -18,7 +18,12 @@
         }
 
         .hero__content {
-            
+            position: relative;
+
+            p {
+                position: relative;
+                z-index: 1;
+            }
             .hero__caption {
                 border-left: 1px solid rgba($color: #fff, $alpha: 0.2);
                 padding: 10px;
@@ -68,7 +73,7 @@
         }
 
         .hero__media {
-            aspect-ratio: 1/1;
+            aspect-ratio: 1.33/1;
             right: -100px;
             top: -25px;
 
@@ -91,29 +96,31 @@
             display: flex;
             flex-direction: column;
 
-            .hero__media{
+            .hero__media {
                 position: relative;
                 min-height: 0px;
             }
-
-
-
+            .h1__container {
+                height: 150px;
+            }
         }
     }
 
-    .projet{
-        .hero__media{
+    .projet {
+        .hero__media {
             right: 0;
             left: -25px;
         }
-            .content {
-                    .hero__content {
-                        .hero__caption {
-                            margin-top: 20px;
-                        }
-                    }
-
-
+        .content {
+            .hero__content {
+                .hero__caption {
+                    margin-top: 20px;
                 }
+
+                .h1__container {
+                    height: 300px;
+                }
+            }
+        }
     }
 }

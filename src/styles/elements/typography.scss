@@ -7,8 +7,7 @@ p {
     font-family: var(--font-secondary);
     color: rgba($color: #fff, $alpha: 0.8);
     letter-spacing: 4%;
-
-    
+    line-height: 1.6;
 }
 
 h1 {
@@ -19,7 +18,6 @@ h1 {
     color: var(--color-white);
     font-weight: 500;
     letter-spacing: 2.5%;
-    
 }
 
 h2 {
@@ -30,8 +28,6 @@ h2 {
     margin: 0;
     color: var(--color-white);
     line-height: 70px;
-
-    
 }
 
 h3 {
@@ -54,36 +50,32 @@ h4 {
     margin: 0;
 }
 
-
-.light{
-    font-size: typo(24px,32px);
+.light {
+    font-size: typo(24px, 32px);
     font-weight: 100;
-    
 }
 
-.title{
+.title {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 15px;
     margin-bottom: 50px;
 
-    .bar{
+    .bar {
         width: 75px;
         height: 0px;
         border-bottom: 1px solid var(--color-white);
     }
 
-    P{
-        font-size: typo(24px,32px);
+    P {
+        font-size: typo(24px, 32px);
         font-weight: 100;
-    
     }
 }
 
-
 @media screen and (max-width: $breakpoint-sm) {
-    .title{
+    .title {
         margin-bottom: 15px;
     }
 }
