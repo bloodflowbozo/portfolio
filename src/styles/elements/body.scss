@@ -5,21 +5,33 @@
    ========================================================================== */
 
 body {
-    background: linear-gradient(
+    background-color: linear-gradient(
         90deg,
         rgba(0, 0, 0, 1) 0%,
         rgb(9, 14, 15) 50%,
         rgba(0, 0, 0, 1) 100%
     );
+    background-color: var(--color-black);
     color: var(--color-black);
     font-family: var(--font-secondary);
     font-size: var(--font-size-content);
 
     overflow-x: hidden;
+    transition: all 0.6s ease;
 
     .aside {
         padding-left: 75px;
         margin-top: 40px;
+    }
+
+    &.theme-light {
+        background: rgba($color: #ffffff, $alpha: 1);
+        color: var(--color-black);
+        background-color: var(--color-white);
+        transition: all 0.6s ease;
+        .caractere h2 {
+            -webkit-text-stroke-color: var(--color-black);
+        }
     }
 }
 
