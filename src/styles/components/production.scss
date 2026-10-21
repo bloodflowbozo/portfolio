@@ -108,8 +108,21 @@
                 }
             }
         }
+
+        .troisd{
+            .troisd-flex{
+                max-height: 500px;
+                .troisd-conteneur{
+                    max-height: 500px;
+                }
+            }
+        }
+
     }
 }
+
+
+
 
 @media screen and (max-width: $breakpoint-sm) {
     .production {
