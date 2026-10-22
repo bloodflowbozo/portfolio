@@ -6,27 +6,41 @@
     <h2>On se parle?</h2>
 
     <div class="champs">
+        <form
+                        class="contact__form"
+                        data-component="Form"
+                        action="https://formsubmit.co/zacklamontagne0@gmail.com"
+                        method="POST"
+                        autocomplete="off"
+                    >
             <div class="ligne1">
-                <div class="prenom champ" data-scrolly="fromRight">
-                    <p>Nom</p>
-                    <div class="bar"></div>
+                <div class="contact__field">
+                        <input type="text" name="fullname" placeholder="Nom" required />
+                        <p class="error-msg"><span class="accent">*</span> Rentrez votre nom</p>
                 </div>
-                <div class="mail champ" data-scrolly="fromRight">
-                    <p>Courriel</p>
-                    <div class="bar"></div>
+                <div class="contact__field">
+                     <p class="error-msg"> <span class="accent">*</span> Le courriel n'est pas valide</p>
+                        <input type="email" name="email" placeholder="Courriel" required />
+                       
                 </div>
             </div>
 
-            <div class="textarea champ" data-scrolly="fromRight">
-                <p>Message</p>
-                <div class="bar"></div>
+            <div class="contact__field">
+                <textarea name="comment" placeholder="Message" rows="2" required></textarea>
+                <p class="error-msg"> <span class="accent">*</span> Veuillez inscrire votre message</p>
             </div>
-
-            <a href="" class="bouton">
+  
+        
+            <button type="submit" href="#contact" class="bouton">
                 <p>Envoyer</p>
                 <p>→</p>
                 <div class="fill"></div>
-            </a>
+            </button>
+
+            <div class="form__confirmation">
+                <h2 class="contact__thanks">MERCI !</h2>
+            </div>
+         </form>   
         </div>
 </div>
 </section>

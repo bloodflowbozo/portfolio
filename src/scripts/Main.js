@@ -5,6 +5,7 @@ import './components/stars.js';
 import './components/circularCarousel.js';
 import './components/3d.js';
 import './components/modal.js';
+import './utils/formSender.js';
 
 class Main {
   constructor() {
