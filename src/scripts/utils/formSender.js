@@ -19,7 +19,7 @@ export default class Main {
 
       const formData = new FormData(form);
 
-      fetch('https://formsubmit.co/ajax/marcos.sosa.silva002@gmail.com', {
+      fetch('https://formsubmit.co/ajax/zacklamontagne0@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
