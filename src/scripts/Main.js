@@ -4,6 +4,7 @@ import ComponentFactory from './ComponentFactory.js';
 import './components/stars.js';
 import './components/circularCarousel.js';
 import './components/3d.js';
+import './components/modal.js';
 
 class Main {
   constructor() {
