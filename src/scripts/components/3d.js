@@ -271,6 +271,11 @@ function demoModel() {
 }
 
 // ---------- boot ----------
-const container = document.getElementById('viewer');
+if (document.getElementById('viewer')){
+  const container = document.getElementById('viewer');
 const params = new URLSearchParams(location.search);
 createViewer(container, { url: params.get('model') || container.dataset.src });
+
+
+}
+
