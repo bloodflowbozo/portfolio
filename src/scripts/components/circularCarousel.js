@@ -24,25 +24,25 @@
  * Programmatic usage:
  *   const carousel = new CircularCarousel('#carousel', { items: [...], preset: 'panorama' });
  *   Methods: next(), prev(), goTo(index), getActive(), update(options), destroy()
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  * for data to be accessed by the script : around line 976
- * 
+ *
  * to modify the captions/tittle : _syncCaption
- * 
- * 
+ *
+ *
  * to modify the counter : _setDigits
- * 
+ *
  * for carouse paramets : line 75
- * 
- * 
- * 
+ *
+ *
+ *
  */
 (function (global, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory();
@@ -50,26 +50,129 @@
 })(typeof self !== 'undefined' ? self : this, function () {
   'use strict';
 
-  const photo = id => 'https://images.unsplash.com/' + id + '?w=900&q=80&auto=format&fit=max&sat=-100';
+  const photo = (id) =>
+    'https://images.unsplash.com/' +
+    id +
+    '?w=900&q=80&auto=format&fit=max&sat=-100';
 
   const DEFAULT_ITEMS = [
-    { src: photo('photo-1506744038136-46273834b3fb'), alt: 'Mist drifting through a mountain valley', title: 'Valley', subtitle: 'Landscape', link: '#'},
-    { src: photo('photo-1524504388940-b1c1722653e1'), alt: 'A woman with long hair in soft studio light', title: 'Portrait', subtitle: 'Studio', link: '#' },
-    { src: photo('photo-1486406146926-c627a92ad1ab'), alt: 'Glass towers seen from street level', title: 'Towers', subtitle: 'Architecture', link: '#' },
-    { src: photo('photo-1502680390469-be75c86b636f'), alt: 'A surfer carving inside a breaking wave', title: 'Swell', subtitle: 'Ocean', link: '#' },
-    { src: photo('photo-1487958449943-2429e8be8625'), alt: 'An angular white building against the sky', title: 'Facade', subtitle: 'Architecture', link: '#' },
-    { src: photo('photo-1509631179647-0177331693ae'), alt: 'A model in striped trousers leaning on a wall', title: 'Pose', subtitle: 'Editorial', link: '#' },
-    { src: photo('photo-1519681393784-d120267933ba'), alt: 'The Milky Way above snowy peaks', title: 'Night', subtitle: 'Sky', link: '#' },
-    { src: photo('photo-1485968579580-b6d095142e6e'), alt: 'A woman in a long coat on a city street', title: 'Street', subtitle: 'Editorial', link: '#' },
-    { src: photo('photo-1493246507139-91e8fad9978e'), alt: 'Mountains mirrored in a still lake', title: 'Mirror', subtitle: 'Landscape', link: '#' },
-    { src: photo('photo-1511818966892-d7d671e672a2'), alt: 'A glass skyscraper under a cloudy sky', title: 'Glass', subtitle: 'Architecture', link: '#' }
+    {
+      src: photo('photo-1506744038136-46273834b3fb'),
+      alt: 'Mist drifting through a mountain valley',
+      title: 'Valley',
+      subtitle: 'Landscape',
+      link: '#',
+    },
+    {
+      src: photo('photo-1524504388940-b1c1722653e1'),
+      alt: 'A woman with long hair in soft studio light',
+      title: 'Portrait',
+      subtitle: 'Studio',
+      link: '#',
+    },
+    {
+      src: photo('photo-1486406146926-c627a92ad1ab'),
+      alt: 'Glass towers seen from street level',
+      title: 'Towers',
+      subtitle: 'Architecture',
+      link: '#',
+    },
+    {
+      src: photo('photo-1502680390469-be75c86b636f'),
+      alt: 'A surfer carving inside a breaking wave',
+      title: 'Swell',
+      subtitle: 'Ocean',
+      link: '#',
+    },
+    {
+      src: photo('photo-1487958449943-2429e8be8625'),
+      alt: 'An angular white building against the sky',
+      title: 'Facade',
+      subtitle: 'Architecture',
+      link: '#',
+    },
+    {
+      src: photo('photo-1509631179647-0177331693ae'),
+      alt: 'A model in striped trousers leaning on a wall',
+      title: 'Pose',
+      subtitle: 'Editorial',
+      link: '#',
+    },
+    {
+      src: photo('photo-1519681393784-d120267933ba'),
+      alt: 'The Milky Way above snowy peaks',
+      title: 'Night',
+      subtitle: 'Sky',
+      link: '#',
+    },
+    {
+      src: photo('photo-1485968579580-b6d095142e6e'),
+      alt: 'A woman in a long coat on a city street',
+      title: 'Street',
+      subtitle: 'Editorial',
+      link: '#',
+    },
+    {
+      src: photo('photo-1493246507139-91e8fad9978e'),
+      alt: 'Mountains mirrored in a still lake',
+      title: 'Mirror',
+      subtitle: 'Landscape',
+      link: '#',
+    },
+    {
+      src: photo('photo-1511818966892-d7d671e672a2'),
+      alt: 'A glass skyscraper under a cloudy sky',
+      title: 'Glass',
+      subtitle: 'Architecture',
+      link: '#',
+    },
   ];
 
   const PRESETS = {
-    cylinder: { axis: 'y', tilt: -5, perspective: 2500, curve: 1, spread: 1, inward: false, billboard: false, backfaces: true, window: 0 },
-    orbit: { axis: 'y', tilt: -16, perspective: 1500, curve: 0, spread: 1.45, inward: false, billboard: true, backfaces: false, window: 0 },
-    wheel: { axis: 'x', tilt: 0, perspective: 1800, curve: 0, spread: 1, inward: false, billboard: false, backfaces: true, window: 1.7 },
-    panorama: { axis: 'y', tilt: 0, perspective: 0, curve: 1, spread: 1, inward: true, billboard: false, backfaces: false, window: 0 }
+    cylinder: {
+      axis: 'y',
+      tilt: -5,
+      perspective: 2500,
+      curve: 1,
+      spread: 1,
+      inward: false,
+      billboard: false,
+      backfaces: true,
+      window: 0,
+    },
+    orbit: {
+      axis: 'y',
+      tilt: -16,
+      perspective: 1500,
+      curve: 0,
+      spread: 1.45,
+      inward: false,
+      billboard: true,
+      backfaces: false,
+      window: 0,
+    },
+    wheel: {
+      axis: 'x',
+      tilt: 0,
+      perspective: 1800,
+      curve: 0,
+      spread: 1,
+      inward: false,
+      billboard: false,
+      backfaces: true,
+      window: 1.7,
+    },
+    panorama: {
+      axis: 'y',
+      tilt: 0,
+      perspective: 0,
+      curve: 1,
+      spread: 1,
+      inward: true,
+      billboard: false,
+      backfaces: false,
+      window: 0,
+    },
   };
 
   const DEFAULTS = {
@@ -78,7 +181,7 @@
     intro: 'rise', // 'rise' | 'assemble' | 'spin' | 'none'
     cardWidth: 300,
     aspectRatio: 1.33,
-    gap: 25,
+    gap: 150,
     curve: 1,
     tilt: 0,
     perspective: 1800,
@@ -100,7 +203,9 @@
     captions: false,
     className: '',
     onChange: null, // (index) => void
-    onItemClick: null // (item, index) => void
+    onItemClick: null, // (item, index) => void
+    focusScale: 1.5, // size of the centered card (1 = no growth)
+    focusLift: 120, // px the centered card is pulled toward the viewer
   };
 
   const INTRO_LENGTH = { assemble: 1500, rise: 1400, spin: 1800, none: 0 };
@@ -113,9 +218,9 @@
   const TO_RAD = Math.PI / 180;
 
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
-  const wrap = degrees => ((((degrees + 180) % 360) + 360) % 360) - 180;
-  const easeOut = t => 1 - Math.pow(1 - t, 4);
-  const easeOutQuint = t => 1 - Math.pow(1 - t, 5);
+  const wrap = (degrees) => ((((degrees + 180) % 360) + 360) % 360) - 180;
+  const easeOut = (t) => 1 - Math.pow(1 - t, 4);
+  const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
 
   const rotateX = (p, degrees) => {
     const r = degrees * TO_RAD;
@@ -140,7 +245,10 @@
 
   class CircularCarousel {
     constructor(container, options) {
-      const target = typeof container === 'string' ? document.querySelector(container) : container;
+      const target =
+        typeof container === 'string'
+          ? document.querySelector(container)
+          : container;
       if (!target) throw new Error('CircularCarousel: container not found');
       this.container = target;
       this.options = Object.assign({}, DEFAULTS, options || {});
@@ -153,12 +261,32 @@
       this.cardEls = [];
 
       this.state = {
-        angle: 0, velocity: 0, target: null, dir: 0, press: null, drag: false, hover: false,
-        pointer: { inside: false, x: 0, y: 0 }, yaw: 0, pitch: 0, intro: null, introDone: false,
-        holdUntil: 0, stepAt: 0, suppressClick: false, wheelTimer: 0, fit: 1, shift: 0, drop: 0, last: 0
+        angle: 0,
+        velocity: 0,
+        target: null,
+        dir: 0,
+        press: null,
+        drag: false,
+        hover: false,
+        pointer: { inside: false, x: 0, y: 0 },
+        yaw: 0,
+        pitch: 0,
+        intro: null,
+        introDone: false,
+        holdUntil: 0,
+        stepAt: 0,
+        suppressClick: false,
+        wheelTimer: 0,
+        fit: 1,
+        shift: 0,
+        drop: 0,
+        last: 0,
+        pop: 0,
       };
 
-      const query = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+      const query = window.matchMedia
+        ? window.matchMedia('(prefers-reduced-motion: reduce)')
+        : null;
       this._motionQuery = query;
       this.reduced = query ? query.matches : false;
       this._onMotionChange = () => {
@@ -166,7 +294,8 @@
         this._settings();
         this._wake();
       };
-      if (query && query.addEventListener) query.addEventListener('change', this._onMotionChange);
+      if (query && query.addEventListener)
+        query.addEventListener('change', this._onMotionChange);
 
       this._buildRoot();
       this._configure();
@@ -180,10 +309,18 @@
 
     /* ---------- public API ---------- */
 
-    next() { this._stepBy(1); }
-    prev() { this._stepBy(-1); }
-    goTo(index) { this._focusIndex(clamp(index, 0, this.g.count - 1)); }
-    getActive() { return this.active; }
+    next() {
+      this._stepBy(1);
+    }
+    prev() {
+      this._stepBy(-1);
+    }
+    goTo(index) {
+      this._focusIndex(clamp(index, 0, this.g.count - 1));
+    }
+    getActive() {
+      return this.active;
+    }
 
     update(options) {
       const prevKey = this._itemsKey;
@@ -225,14 +362,16 @@
       const o = this.options;
       const list = o.items && o.items.length ? o.items : DEFAULT_ITEMS;
       this.list = list;
-      this._itemsKey = list.map(item => item.src).join('|');
+      this._itemsKey = list.map((item) => item.src).join('|');
 
       const count = list.length;
       const shape = PRESETS[o.preset] ? o.preset : 'cylinder';
       const layout = PRESETS[shape];
       const axis = layout.axis;
       const tiltValue = o.tilt != null ? o.tilt : layout.tilt;
-      const curveValue = layout.billboard ? 0 : clamp(o.curve != null ? o.curve : layout.curve, 0, 1);
+      const curveValue = layout.billboard
+        ? 0
+        : clamp(o.curve != null ? o.curve : layout.curve, 0, 1);
       const cardW = Math.max(40, o.cardWidth);
       const cardH = cardW / clamp(o.aspectRatio, 0.2, 5);
       const along = axis === 'x' ? cardH : cardW;
@@ -250,20 +389,47 @@
       const tiles = [];
       for (let index = 0; index < total; index++) {
         const start = index * length - (index > 0 ? OVERLAP / 2 : 0);
-        const end = (index + 1) * length + (index < total - 1 ? OVERLAP / 2 : 0);
+        const end =
+          (index + 1) * length + (index < total - 1 ? OVERLAP / 2 : 0);
         const center = (start + end) / 2 - along / 2;
         const alpha = bend ? center / bend : 0;
         const shift = bend ? bend * Math.sin(alpha) : center;
         const sink = bend ? bend * (1 - Math.cos(alpha)) : 0;
         const depth = layout.inward ? sink : -sink;
         const turn = ((layout.inward ? -alpha : alpha) * 180) / Math.PI;
-        const move = axis === 'x'
-          ? 'translate3d(0px, ' + shift + 'px, ' + depth + 'px) rotateX(' + -turn + 'deg)'
-          : 'translate3d(' + shift + 'px, 0px, ' + depth + 'px) rotateY(' + turn + 'deg)';
+        const move =
+          axis === 'x'
+            ? 'translate3d(0px, ' +
+              shift +
+              'px, ' +
+              depth +
+              'px) rotateX(' +
+              -turn +
+              'deg)'
+            : 'translate3d(' +
+              shift +
+              'px, 0px, ' +
+              depth +
+              'px) rotateY(' +
+              turn +
+              'deg)';
         tiles.push({ index, total, start, end, size: end - start, move });
       }
 
-      this.g = { count, shape, layout, axis, tiltValue, curveValue, cardW, cardH, along, step, radius, tiles };
+      this.g = {
+        count,
+        shape,
+        layout,
+        axis,
+        tiltValue,
+        curveValue,
+        cardW,
+        cardH,
+        along,
+        step,
+        radius,
+        tiles,
+      };
       this._settings();
 
       const dragSign = layout.inward ? -1 : 1;
@@ -285,10 +451,14 @@
         layout: g.layout,
         axis: g.axis,
         tilt: g.tiltValue,
-        perspective: g.layout.inward ? g.radius : (o.perspective != null ? o.perspective : g.layout.perspective),
+        perspective: g.layout.inward
+          ? g.radius
+          : o.perspective != null
+            ? o.perspective
+            : g.layout.perspective,
         cardW: g.cardW,
         cardH: g.cardH,
-        intro: r ? 'none' : (o.intro in INTRO_LENGTH ? o.intro : 'rise'),
+        intro: r ? 'none' : o.intro in INTRO_LENGTH ? o.intro : 'rise',
         autoplay: r ? 'off' : o.autoplay,
         speed: o.speed,
         interval: Math.max(0.5, o.interval),
@@ -300,7 +470,9 @@
         stretch: r ? 0 : clamp(o.stretch, 0, 1),
         depthFade: clamp(o.depthFade, 0, 1),
         captions: o.captions,
-        reduced: r
+        reduced: r,
+        focusScale: clamp(o.focusScale, 1, 3),
+        focusLift: Math.max(0, o.focusLift),
       };
     }
 
@@ -311,9 +483,9 @@
         role: 'region',
         'aria-roledescription': 'carousel',
         'aria-label': 'Image carousel',
-        tabindex: '0'
+        tabindex: '0',
       });
-      const view = el('div', 'circular-carousel__view');
+      const view = (this.view = el('div', 'circular-carousel__view'));
       this.stage = el('div', 'circular-carousel__stage');
       this.camera = el('div', 'circular-carousel__camera');
       this.ring = el('div', 'circular-carousel__ring');
@@ -322,7 +494,10 @@
       view.appendChild(this.stage);
       root.appendChild(view);
 
-      this.live = el('div', 'circular-carousel__live', { 'aria-live': 'polite', 'aria-atomic': 'true' });
+      this.live = el('div', 'circular-carousel__live', {
+        'aria-live': 'polite',
+        'aria-atomic': 'true',
+      });
       root.appendChild(this.live);
 
       this.root = root;
@@ -340,7 +515,12 @@
       if (this.ready) root.setAttribute('data-ready', '');
       root.style.setProperty('--cc-fade', o.fadeColor);
       root.style.setProperty('--cc-radius', Math.max(0, o.cornerRadius) + 'px');
-      root.style.setProperty('--cc-inner', (1 - clamp(o.innerShade, 0, 1)).toFixed(3));
+      root.style.setProperty(
+        '--cc-inner',
+        (1 - clamp(o.innerShade, 0, 1)).toFixed(3),
+      );
+      root.style.overflow = 'visible';
+      if (this.view) this.view.style.overflow = 'visible';
     }
 
     _buildCards() {
@@ -352,10 +532,20 @@
           'data-cc-index': String(index),
           role: 'group',
           'aria-roledescription': 'slide',
-          'aria-label': (item.title || item.alt || 'Image ' + (index + 1)) + ', ' + (index + 1) + ' of ' + g.count
+          'aria-label':
+            (item.title || item.alt || 'Image ' + (index + 1)) +
+            ', ' +
+            (index + 1) +
+            ' of ' +
+            g.count,
         });
-        g.tiles.forEach(tile => card.appendChild(this._tile(item, tile, false)));
-        if (g.layout.backfaces) g.tiles.forEach(tile => card.appendChild(this._tile(item, tile, true)));
+        g.tiles.forEach((tile) =>
+          card.appendChild(this._tile(item, tile, false)),
+        );
+        if (g.layout.backfaces)
+          g.tiles.forEach((tile) =>
+            card.appendChild(this._tile(item, tile, true)),
+          );
         this.ring.appendChild(card);
         this.cardEls.push(card);
       });
@@ -368,13 +558,26 @@
       const first = strip === 0;
       const last = strip === tile.total - 1;
       const r = 'var(--cc-radius)';
-      const frameRadius = axis === 'x'
-        ? [first ? r : '0', first ? r : '0', last ? r : '0', last ? r : '0'].join(' ')
-        : [first ? r : '0', last ? r : '0', last ? r : '0', first ? r : '0'].join(' ');
+      const frameRadius =
+        axis === 'x'
+          ? [
+              first ? r : '0',
+              first ? r : '0',
+              last ? r : '0',
+              last ? r : '0',
+            ].join(' ')
+          : [
+              first ? r : '0',
+              last ? r : '0',
+              last ? r : '0',
+              first ? r : '0',
+            ].join(' ');
       const offset = back ? g.along - tile.end : tile.start;
       const size = tile.size;
 
-      const node = el('div', 'circular-carousel__tile', { 'aria-hidden': 'true' });
+      const node = el('div', 'circular-carousel__tile', {
+        'aria-hidden': 'true',
+      });
       if (axis === 'x') {
         node.style.left = -g.cardW / 2 + 'px';
         node.style.top = -size / 2 + 'px';
@@ -386,13 +589,19 @@
         node.style.width = size + 'px';
         node.style.height = g.cardH + 'px';
       }
-      node.style.transform = tile.move + (back ? (axis === 'x' ? ' rotateX(180deg)' : ' rotateY(180deg)') : '');
+      node.style.transform =
+        tile.move +
+        (back ? (axis === 'x' ? ' rotateX(180deg)' : ' rotateY(180deg)') : '');
 
       const frame = el('div', 'circular-carousel__frame');
       frame.style.height = (axis === 'x' ? size : g.cardH) + 'px';
       frame.style.borderRadius = frameRadius;
 
-      const img = el('img', 'circular-carousel__photo', { alt: '', decoding: 'async', draggable: 'false' });
+      const img = el('img', 'circular-carousel__photo', {
+        alt: '',
+        decoding: 'async',
+        draggable: 'false',
+      });
       img.src = item.src;
       if (axis === 'x') {
         img.style.left = '0px';
@@ -414,7 +623,9 @@
     _syncCaption(rebuild) {
       const count = this.g.count;
       const current = this.list[this.active] || this.list[0];
-      const label = current ? current.title || current.alt || 'Image ' + (this.active + 1) : '';
+      const label = current
+        ? current.title || current.alt || 'Image ' + (this.active + 1)
+        : '';
       this.live.textContent = label + ', ' + (this.active + 1) + ' of ' + count;
 
       if (!this.options.captions || !current) {
@@ -430,7 +641,9 @@
         this.caption = null;
       }
       if (!this.caption) {
-        const caption = el('div', 'circular-carousel__caption', { 'aria-hidden': 'true' });
+        const caption = el('div', 'circular-carousel__caption', {
+          'aria-hidden': 'true',
+        });
         this._titleEl = null;
         const counter = el('span', 'circular-carousel__count');
         this._digits = el('span', 'circular-carousel__digits');
@@ -463,19 +676,18 @@
       this._titleEl = title;
 
       const section = this.container.parentElement;
-      const bouton = section.querySelector(".bouton")
+      const bouton = section.querySelector('.bouton');
       console.log(current);
       bouton.href = current.link;
 
       this._setDigits(this.active + 1);
-
-
     }
 
     _setDigits(value) {
       const str = String(value).padStart(2, '0');
       if (this._digitReels.length !== str.length) {
-        while (this._digits.firstChild) this._digits.removeChild(this._digits.firstChild);
+        while (this._digits.firstChild)
+          this._digits.removeChild(this._digits.firstChild);
         this._digitReels = [];
         for (let i = 0; i < str.length; i++) {
           const digit = el('span', 'circular-carousel__digit');
@@ -491,7 +703,8 @@
         }
       }
       str.split('').forEach((d, i) => {
-        this._digitReels[i].style.transform = 'translateY(' + -Number(d) * 10 + '%)';
+        this._digitReels[i].style.transform =
+          'translateY(' + -Number(d) * 10 + '%)';
       });
     }
 
@@ -501,16 +714,17 @@
       const token = ++this._loadToken;
       this.ready = false;
       this.root.removeAttribute('data-ready');
-      const sources = this.list.slice(0, 16).map(item => item.src);
-      const load = src =>
-        new Promise(resolve => {
+      const sources = this.list.slice(0, 16).map((item) => item.src);
+      const load = (src) =>
+        new Promise((resolve) => {
           const image = new Image();
           image.decoding = 'async';
-          image.onload = () => (image.decode ? image.decode().then(resolve, resolve) : resolve());
+          image.onload = () =>
+            image.decode ? image.decode().then(resolve, resolve) : resolve();
           image.onerror = resolve;
           image.src = src;
         });
-      const timeout = new Promise(resolve => setTimeout(resolve, 2400));
+      const timeout = new Promise((resolve) => setTimeout(resolve, 2400));
       Promise.race([Promise.all(sources.map(load)), timeout]).then(() => {
         if (this.destroyed || token !== this._loadToken) return;
         this.state.introDone = false;
@@ -533,7 +747,7 @@
       let raf = 0;
       let visible = true;
 
-      const nearest = angle => Math.round(angle / self.s.step) * self.s.step;
+      const nearest = (angle) => Math.round(angle / self.s.step) * self.s.step;
 
       const measure = () => {
         const s = self.s;
@@ -557,7 +771,7 @@
             [-s.cardW / 2, -s.cardH / 2],
             [s.cardW / 2, -s.cardH / 2],
             [-s.cardW / 2, s.cardH / 2],
-            [s.cardW / 2, s.cardH / 2]
+            [s.cardW / 2, s.cardH / 2],
           ];
           const limit = s.layout.window ? s.layout.window * s.step : 180;
           for (let a = -limit; a <= limit; a += limit / 24) {
@@ -588,9 +802,13 @@
         const fit = Math.min(1, width / spanX, height / spanY);
         state.fit = fit;
         state.shift = -((minY + maxY) / 2) * fit - room / 2;
-        state.drop = s.axis === 'x' ? (rect.width / fit) * 0.55 + s.cardW : (rect.height / fit) * 0.55 + s.cardH;
+        state.drop =
+          s.axis === 'x'
+            ? (rect.width / fit) * 0.55 + s.cardW
+            : (rect.height / fit) * 0.55 + s.cardH;
         stage.style.perspective = P + 'px';
-        stage.style.transform = 'translate3d(0, ' + state.shift + 'px, 0) scale(' + fit + ')';
+        stage.style.transform =
+          'translate3d(0, ' + state.shift + 'px, 0) scale(' + fit + ')';
       };
       this._measure = measure;
 
@@ -621,14 +839,23 @@
             if (s.intro === 'none') state.introDone = true;
             else state.intro = { type: s.intro, start: now };
           }
-          if (state.intro && now - state.intro.start >= INTRO_LENGTH[state.intro.type]) {
+          if (
+            state.intro &&
+            now - state.intro.start >= INTRO_LENGTH[state.intro.type]
+          ) {
             state.intro = null;
             state.introDone = true;
           }
         }
 
-        const paused = (s.pauseOnHover && state.hover) || state.drag || now < state.holdUntil;
-        const cruise = s.autoplay === 'drift' && !paused && !state.intro ? s.speed * state.dir : 0;
+        const paused =
+          (s.pauseOnHover && state.hover) ||
+          state.drag ||
+          now < state.holdUntil;
+        const cruise =
+          s.autoplay === 'drift' && !paused && !state.intro
+            ? s.speed * state.dir
+            : 0;
         let busy = Boolean(state.intro) || state.drag;
 
         if (state.drag || state.intro) {
@@ -638,12 +865,16 @@
           const damping = 2 * Math.sqrt(SPRING);
           while (remaining > 0) {
             const h = Math.min(remaining, 1 / 240);
-            const accel = SPRING * (state.target - state.angle) - damping * state.velocity;
+            const accel =
+              SPRING * (state.target - state.angle) - damping * state.velocity;
             state.velocity += accel * h;
             state.angle += state.velocity * h;
             remaining -= h;
           }
-          if (Math.abs(state.target - state.angle) < 0.004 && Math.abs(state.velocity) < 0.03) {
+          if (
+            Math.abs(state.target - state.angle) < 0.004 &&
+            Math.abs(state.velocity) < 0.03
+          ) {
             state.angle = state.target;
             state.velocity = 0;
             state.target = null;
@@ -651,18 +882,34 @@
           busy = true;
         } else {
           const tau = 0.18 + s.momentum * 1.5;
-          state.velocity += (cruise - state.velocity) * (1 - Math.exp(-dt / tau));
+          state.velocity +=
+            (cruise - state.velocity) * (1 - Math.exp(-dt / tau));
           state.angle += state.velocity * dt;
-          if (cruise === 0 && s.snap && Math.abs(state.velocity) < SETTLE_SPEED) {
+          if (
+            cruise === 0 &&
+            s.snap &&
+            Math.abs(state.velocity) < SETTLE_SPEED
+          ) {
             state.target = nearest(state.angle);
           }
-          busy = busy || cruise !== 0 || Math.abs(state.velocity) > 0.01 || state.target !== null;
+          busy =
+            busy ||
+            cruise !== 0 ||
+            Math.abs(state.velocity) > 0.01 ||
+            state.target !== null;
         }
 
-        if (s.autoplay === 'step' && !paused && !state.intro && state.introDone) {
+        if (
+          s.autoplay === 'step' &&
+          !paused &&
+          !state.intro &&
+          state.introDone
+        ) {
           if (!state.stepAt) state.stepAt = now + s.interval * 1000;
           if (now >= state.stepAt) {
-            state.target = (state.target !== null ? state.target : nearest(state.angle)) + s.step * state.dir;
+            state.target =
+              (state.target !== null ? state.target : nearest(state.angle)) +
+              s.step * state.dir;
             state.stepAt = now + s.interval * 1000;
           }
           busy = true;
@@ -673,18 +920,30 @@
         if (now < state.holdUntil) busy = true;
 
         const ease = 1 - Math.exp(-dt / 0.35);
-        const aimYaw = state.pointer.inside ? state.pointer.x * s.parallax * 9 : 0;
-        const aimPitch = state.pointer.inside ? -state.pointer.y * s.parallax * 6 : 0;
+        const aimYaw = state.pointer.inside
+          ? state.pointer.x * s.parallax * 9
+          : 0;
+        const aimPitch = state.pointer.inside
+          ? -state.pointer.y * s.parallax * 6
+          : 0;
         state.yaw += (aimYaw - state.yaw) * ease;
         state.pitch += (aimPitch - state.pitch) * ease;
-        if (Math.abs(aimYaw - state.yaw) > 0.01 || Math.abs(aimPitch - state.pitch) > 0.01) busy = true;
+        const popTarget = state.introDone ? 1 : 0;
+        state.pop += (popTarget - state.pop) * (1 - Math.exp(-dt / 0.2));
+        if (Math.abs(popTarget - state.pop) > 0.002) busy = true;
+        if (
+          Math.abs(aimYaw - state.yaw) > 0.01 ||
+          Math.abs(aimPitch - state.pitch) > 0.01
+        )
+          busy = true;
 
         return busy;
       };
 
       const render = (s, now) => {
         const elapsed = state.intro ? now - state.intro.start : 0;
-        const swell = 1 + s.stretch * 0.12 * Math.min(1, Math.abs(state.velocity) / 420);
+        const swell =
+          1 + s.stretch * 0.12 * Math.min(1, Math.abs(state.velocity) / 420);
         let spinOffset = 0;
         if (state.intro && state.intro.type === 'spin') {
           const p = easeOut(clamp(elapsed / INTRO_LENGTH.spin, 0, 1));
@@ -697,13 +956,34 @@
         const R = s.radius * swell;
 
         if (s.axis === 'x') {
-          camera.style.transform = 'translate3d(0, 0, ' + -R + 'px) rotateY(' + (s.tilt + state.yaw) + 'deg) rotateX(' + state.pitch + 'deg)';
+          camera.style.transform =
+            'translate3d(0, 0, ' +
+            -R +
+            'px) rotateY(' +
+            (s.tilt + state.yaw) +
+            'deg) rotateX(' +
+            state.pitch +
+            'deg)';
           ring.style.transform = 'rotateX(' + -angle + 'deg)';
         } else if (s.layout.inward) {
-          camera.style.transform = 'translate3d(0, 0, ' + (s.perspective - 1) + 'px) rotateX(' + (s.tilt + state.pitch) + 'deg) rotateY(' + state.yaw + 'deg)';
+          camera.style.transform =
+            'translate3d(0, 0, ' +
+            (s.perspective - 1) +
+            'px) rotateX(' +
+            (s.tilt + state.pitch) +
+            'deg) rotateY(' +
+            state.yaw +
+            'deg)';
           ring.style.transform = 'rotateY(' + angle + 'deg)';
         } else {
-          camera.style.transform = 'translate3d(0, 0, ' + -R + 'px) rotateX(' + (s.tilt + state.pitch) + 'deg) rotateY(' + state.yaw + 'deg)';
+          camera.style.transform =
+            'translate3d(0, 0, ' +
+            -R +
+            'px) rotateX(' +
+            (s.tilt + state.pitch) +
+            'deg) rotateY(' +
+            state.yaw +
+            'deg)';
           ring.style.transform = 'rotateY(' + angle + 'deg)';
         }
 
@@ -713,6 +993,12 @@
           const base = index * s.step;
           const mod = introCard(elapsed, base);
           const r = R * mod.radius;
+          const world = wrap(base + angle);
+
+          // 0..1: how close this card is to the front/active position
+          const closeness = clamp(1 - Math.abs(world) / s.step, 0, 1);
+          const grow = closeness * closeness * (3 - 2 * closeness) * state.pop;
+
           let transform;
           if (s.axis === 'x') {
             transform = 'rotateX(' + -base + 'deg) translateZ(' + r + 'px)';
@@ -720,30 +1006,48 @@
             transform = 'rotateY(' + base + 'deg) translateZ(' + -r + 'px)';
           } else {
             transform = 'rotateY(' + base + 'deg) translateZ(' + r + 'px)';
-            if (s.layout.billboard) transform += ' rotateY(' + -(base + angle) + 'deg)';
+            if (s.layout.billboard)
+              transform += ' rotateY(' + -(base + angle) + 'deg)';
           }
-          if (mod.lift) transform += s.axis === 'x' ? ' translateX(' + mod.lift + 'px)' : ' translateY(' + mod.lift + 'px)';
+          if (mod.lift)
+            transform +=
+              s.axis === 'x'
+                ? ' translateX(' + mod.lift + 'px)'
+                : ' translateY(' + mod.lift + 'px)';
+          if (grow > 0.001) {
+            transform +=
+              ' translateZ(' +
+              grow * s.focusLift +
+              'px) scale(' +
+              (1 + (s.focusScale - 1) * grow) +
+              ')';
+          }
           card.style.transform = transform;
 
-          const world = wrap(base + angle);
           const facing = Math.cos(world * TO_RAD);
-          if (s.layout.inward) card.style.visibility = Math.abs(world) > 86 ? 'hidden' : '';
+          if (s.layout.inward)
+            card.style.visibility = Math.abs(world) > 86 ? 'hidden' : '';
           const fade = s.depthFade * Math.pow((1 - facing) / 2, 1.25);
           card.style.setProperty('--cc-depth', fade.toFixed(3));
         }
 
-        const index = ((Math.round(-state.angle / s.step) % s.count) + s.count) % s.count || 0;
+        const index =
+          ((Math.round(-state.angle / s.step) % s.count) + s.count) % s.count ||
+          0;
         if (index !== self.active) {
           self.active = index;
           self._syncCaption(false);
-          if (typeof self.options.onChange === 'function') self.options.onChange(index);
+          if (typeof self.options.onChange === 'function')
+            self.options.onChange(index);
         }
       };
 
-      const frame = now => {
+      const frame = (now) => {
         raf = 0;
         self._raf = 0;
-        const dt = state.last ? Math.min((now - state.last) / 1000, 0.05) : 1 / 60;
+        const dt = state.last
+          ? Math.min((now - state.last) / 1000, 0.05)
+          : 1 / 60;
         state.last = now;
         const busy = advance(self.s, dt, now);
         render(self.s, now);
@@ -777,7 +1081,7 @@
       });
       this._resizeObs.observe(root);
 
-      this._intersectObs = new IntersectionObserver(entries => {
+      this._intersectObs = new IntersectionObserver((entries) => {
         visible = entries[0].isIntersecting;
         if (visible) wake();
         else {
@@ -788,10 +1092,11 @@
       });
       this._intersectObs.observe(root);
 
-      this._onWheel = event => {
+      this._onWheel = (event) => {
         const s = self.s;
         if (!s.draggable) return;
-        const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : 0;
+        const delta =
+          Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : 0;
         if (!delta) return;
         event.preventDefault();
         const sign = s.layout.inward ? -1 : 1;
@@ -802,7 +1107,8 @@
         state.holdUntil = performance.now() + 1600;
         clearTimeout(state.wheelTimer);
         state.wheelTimer = setTimeout(() => {
-          if (self.s.snap) state.target = nearest(state.angle + state.velocity * 0.12);
+          if (self.s.snap)
+            state.target = nearest(state.angle + state.velocity * 0.12);
           wake();
         }, 140);
         wake();
@@ -828,7 +1134,10 @@
     _stepBy(delta) {
       const state = this.state;
       const s = this.s;
-      const base = state.target !== null ? state.target : Math.round(state.angle / s.step) * s.step;
+      const base =
+        state.target !== null
+          ? state.target
+          : Math.round(state.angle / s.step) * s.step;
       state.target = base - delta * s.step * (s.layout.inward ? -1 : 1);
       state.holdUntil = performance.now() + 2800;
       this._wake();
@@ -839,13 +1148,21 @@
       const root = this.root;
       const state = this.state;
 
-      const updatePointer = event => {
+      const updatePointer = (event) => {
         const rect = root.getBoundingClientRect();
-        state.pointer.x = clamp(((event.clientX - rect.left) / rect.width) * 2 - 1, -1, 1);
-        state.pointer.y = clamp(((event.clientY - rect.top) / rect.height) * 2 - 1, -1, 1);
+        state.pointer.x = clamp(
+          ((event.clientX - rect.left) / rect.width) * 2 - 1,
+          -1,
+          1,
+        );
+        state.pointer.y = clamp(
+          ((event.clientY - rect.top) / rect.height) * 2 - 1,
+          -1,
+          1,
+        );
       };
 
-      root.addEventListener('pointerdown', event => {
+      root.addEventListener('pointerdown', (event) => {
         state.suppressClick = false;
         if (!self.s.draggable || event.button !== 0) return;
         state.press = {
@@ -855,11 +1172,11 @@
           angle: state.angle,
           moved: false,
           origin: 0,
-          samples: [{ time: performance.now(), angle: state.angle }]
+          samples: [{ time: performance.now(), angle: state.angle }],
         };
       });
 
-      root.addEventListener('pointermove', event => {
+      root.addEventListener('pointermove', (event) => {
         if (event.pointerType === 'mouse') {
           state.pointer.inside = true;
           updatePointer(event);
@@ -870,11 +1187,16 @@
           return;
         }
         const s = self.s;
-        const delta = s.axis === 'x' ? event.clientY - press.y : event.clientX - press.x;
-        const cross = s.axis === 'x' ? event.clientX - press.x : event.clientY - press.y;
+        const delta =
+          s.axis === 'x' ? event.clientY - press.y : event.clientX - press.x;
+        const cross =
+          s.axis === 'x' ? event.clientX - press.x : event.clientY - press.y;
         if (!press.moved) {
           if (Math.abs(delta) < DRAG_THRESHOLD) return;
-          if (Math.abs(cross) > Math.abs(delta) * 1.2 && event.pointerType !== 'mouse') {
+          if (
+            Math.abs(cross) > Math.abs(delta) * 1.2 &&
+            event.pointerType !== 'mouse'
+          ) {
             state.press = null;
             return;
           }
@@ -889,14 +1211,17 @@
           } catch (e) {}
         }
         const perPixel = 180 / (Math.PI * s.radius * state.fit);
-        state.angle = press.angle + (delta - press.origin) * perPixel * (s.layout.inward ? -1 : 1);
+        state.angle =
+          press.angle +
+          (delta - press.origin) * perPixel * (s.layout.inward ? -1 : 1);
         const now = performance.now();
         press.samples.push({ time: now, angle: state.angle });
-        while (press.samples.length > 2 && now - press.samples[0].time > 110) press.samples.shift();
+        while (press.samples.length > 2 && now - press.samples[0].time > 110)
+          press.samples.shift();
         self._wake();
       });
 
-      const release = event => {
+      const release = (event) => {
         const press = state.press;
         if (!press || press.id !== event.pointerId) return;
         state.press = null;
@@ -908,26 +1233,32 @@
         const first = press.samples[0];
         const last = press.samples[press.samples.length - 1];
         const span = (last.time - first.time) / 1000;
-        const velocity = span > 0.008 ? clamp((last.angle - first.angle) / span, -1400, 1400) : 0;
+        const velocity =
+          span > 0.008
+            ? clamp((last.angle - first.angle) / span, -1400, 1400)
+            : 0;
         state.velocity = velocity;
         if (Math.abs(velocity) > 60) state.dir = Math.sign(velocity);
-        const coasting = s.autoplay === 'drift' && !(s.pauseOnHover && state.hover && event.pointerType === 'mouse');
+        const coasting =
+          s.autoplay === 'drift' &&
+          !(s.pauseOnHover && state.hover && event.pointerType === 'mouse');
         if (s.snap && !coasting) {
           const tau = 0.18 + s.momentum * 1.5;
-          state.target = Math.round((state.angle + velocity * tau * 0.55) / s.step) * s.step;
+          state.target =
+            Math.round((state.angle + velocity * tau * 0.55) / s.step) * s.step;
         }
         self._wake();
       };
       root.addEventListener('pointerup', release);
       root.addEventListener('pointercancel', release);
 
-      root.addEventListener('pointerenter', event => {
+      root.addEventListener('pointerenter', (event) => {
         if (event.pointerType !== 'mouse') return;
         state.hover = true;
         self._wake();
       });
 
-      root.addEventListener('pointerleave', event => {
+      root.addEventListener('pointerleave', (event) => {
         if (event.pointerType === 'mouse') {
           state.hover = false;
           state.pointer.inside = false;
@@ -935,19 +1266,22 @@
         self._wake();
       });
 
-      root.addEventListener('click', event => {
+      root.addEventListener('click', (event) => {
         if (state.suppressClick) {
           state.suppressClick = false;
           return;
         }
-        const card = event.target.closest ? event.target.closest('[data-cc-index]') : null;
+        const card = event.target.closest
+          ? event.target.closest('[data-cc-index]')
+          : null;
         if (!card) return;
         const index = Number(card.getAttribute('data-cc-index'));
         if (self.options.focusOnClick) self._focusIndex(index);
-        if (typeof self.options.onItemClick === 'function') self.options.onItemClick(self.list[index], index);
+        if (typeof self.options.onItemClick === 'function')
+          self.options.onItemClick(self.list[index], index);
       });
 
-      root.addEventListener('keydown', event => {
+      root.addEventListener('keydown', (event) => {
         const axis = self.g.axis;
         const forward = axis === 'x' ? 'ArrowDown' : 'ArrowRight';
         const backward = axis === 'x' ? 'ArrowUp' : 'ArrowLeft';
@@ -956,7 +1290,8 @@
         else if (event.key === 'Home') self._focusIndex(0);
         else if (event.key === 'End') self._focusIndex(self.g.count - 1);
         else if (event.key === 'Enter' || event.key === ' ') {
-          if (typeof self.options.onItemClick === 'function') self.options.onItemClick(self.list[self.active], self.active);
+          if (typeof self.options.onItemClick === 'function')
+            self.options.onItemClick(self.list[self.active], self.active);
         } else return;
         event.preventDefault();
       });
@@ -967,15 +1302,22 @@
 
   /* ---------- declarative auto-init: <div data-component="CircularCarousel"> ---------- */
 
-  const BOOLEAN_OPTIONS = ['captions', 'draggable', 'snap', 'pauseOnHover', 'focusOnClick'];
+  const BOOLEAN_OPTIONS = [
+    'captions',
+    'draggable',
+    'snap',
+    'pauseOnHover',
+    'focusOnClick',
+  ];
 
   const parseValue = (key, raw) => {
-    if (BOOLEAN_OPTIONS.indexOf(key) !== -1) return !(raw === 'false' || raw === '0');
+    if (BOOLEAN_OPTIONS.indexOf(key) !== -1)
+      return !(raw === 'false' || raw === '0');
     if (raw.trim() !== '' && !isNaN(Number(raw))) return Number(raw);
     return raw;
   };
 
-  const readItems = node => {
+  const readItems = (node) => {
     const json = node.getAttribute('data-items');
     if (json) {
       try {
@@ -987,12 +1329,12 @@
     }
     const imgs = node.querySelectorAll('img');
     if (imgs.length) {
-      return Array.prototype.map.call(imgs, img => ({
+      return Array.prototype.map.call(imgs, (img) => ({
         src: img.getAttribute('src'),
         alt: img.getAttribute('alt') || '',
         title: img.getAttribute('data-title') || undefined,
         subtitle: img.getAttribute('data-subtitle') || undefined,
-        link: img.getAttribute('data-link') || undefined
+        link: img.getAttribute('data-link') || undefined,
       }));
     }
     return null;
@@ -1001,9 +1343,11 @@
   // Creates a carousel for every [data-component="CircularCarousel"] inside `scope`
   // (default: document). Already initialised elements are skipped.
   CircularCarousel.init = function (scope) {
-    const nodes = (scope || document).querySelectorAll('[data-component="CircularCarousel"]');
+    const nodes = (scope || document).querySelectorAll(
+      '[data-component="CircularCarousel"]',
+    );
     const created = [];
-    Array.prototype.forEach.call(nodes, node => {
+    Array.prototype.forEach.call(nodes, (node) => {
       if (node.circularCarousel) return;
 
       const options = {};
@@ -1018,11 +1362,19 @@
       while (node.firstChild) node.removeChild(node.firstChild);
       if (!node.getBoundingClientRect().height) node.style.height = '560px';
 
-      options.onChange = index => {
-        node.dispatchEvent(new CustomEvent('circularcarousel:change', { detail: { index: index } }));
+      options.onChange = (index) => {
+        node.dispatchEvent(
+          new CustomEvent('circularcarousel:change', {
+            detail: { index: index },
+          }),
+        );
       };
       options.onItemClick = (item, index) => {
-        node.dispatchEvent(new CustomEvent('circularcarousel:itemclick', { detail: { item: item, index: index } }));
+        node.dispatchEvent(
+          new CustomEvent('circularcarousel:itemclick', {
+            detail: { item: item, index: index },
+          }),
+        );
       };
 
       node.circularCarousel = new CircularCarousel(node, options);
@@ -1032,9 +1384,27 @@
   };
 
   if (typeof document !== 'undefined') {
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => CircularCarousel.init());
+    if (document.readyState === 'loading')
+      document.addEventListener('DOMContentLoaded', () =>
+        CircularCarousel.init(),
+      );
     else CircularCarousel.init();
   }
 
   return CircularCarousel;
 });
+
+if (document.querySelector('[data-component="CircularCarousel"]')) {
+  const node = document.querySelector('[data-component="CircularCarousel"]');
+  const mq = window.matchMedia('(max-width: 640px)');
+
+  const apply = () =>
+    node.circularCarousel.update(
+      mq.matches
+        ? { cardWidth: 200, gap: 15, focusScale: 1.2, focusLift: 60 }
+        : { cardWidth: 300, gap: 25, focusScale: 1.4, focusLift: 120 },
+    );
+
+  apply();
+  mq.addEventListener('change', apply);
+}
