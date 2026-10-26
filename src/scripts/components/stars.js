@@ -11,7 +11,7 @@ const EXPLOSION_DISTANCE = 18;
 const EXPLOSION_COUNT = 12;
 const CURSOR_RADIUS = 200;
 
-let STAR_COUNT = Math.floor(window.innerWidth/10);
+let STAR_COUNT = Math.floor(window.innerWidth / 10);
 // Attraction radius
 const radius = 200;
 
@@ -31,7 +31,7 @@ window.addEventListener('mouseleave', () => {
 });
 
 function resize() {
-  STAR_COUNT = Math.floor(window.innerWidth/10);
+  STAR_COUNT = Math.floor(window.innerWidth / 10);
   const dpr = window.devicePixelRatio || 1;
 
   width = window.innerWidth;
@@ -96,13 +96,11 @@ function animate() {
 
       star.x += dx * force;
       star.y += dy * force;
-
-      star.size += 0.1;
     }
 
     // Explode when close enough
     if (distance < EXPLOSION_DISTANCE) {
-      explode(star.x, star.y,star.size);
+      explode(star.x, star.y, star.size);
       stars.splice(i, 1);
       stars.push(createStar());
       console.log(stars.length);
@@ -161,7 +159,7 @@ function animate() {
   requestAnimationFrame(animate);
 }
 
-function explode(x, y,start_size) {
+function explode(x, y, start_size) {
   for (let i = 0; i < EXPLOSION_COUNT; i++) {
     const angle = Math.random() * Math.PI * 2;
     const speed = Math.random() * 2.5 + 0.5;
@@ -173,7 +171,7 @@ function explode(x, y,start_size) {
       vx: Math.cos(angle) * speed,
       vy: Math.sin(angle) * speed,
 
-      size: Math.random() * 1.5 + start_size/5,
+      size: Math.random() * 1.5 + start_size / 5,
       alpha: 1,
 
       decay: Math.random() * 0.025 + 0.015,

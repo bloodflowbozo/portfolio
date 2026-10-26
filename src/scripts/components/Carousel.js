@@ -1,6 +1,6 @@
 import Swiper from 'swiper/bundle';
 
-let wordBannerCount = 1
+let wordBannerCount = 1;
 
 export default class Carousel {
   constructor(element) {
@@ -14,7 +14,7 @@ export default class Carousel {
       scrollbar: {
         el: this.element.querySelector('.swiper-scrollbar'),
         draggable: true,
-    },
+      },
       navigation: {
         nextEl: this.element.querySelector('.swiper-button-next'),
         prevEl: this.element.querySelector('.swiper-button-prev'),
@@ -38,7 +38,6 @@ export default class Carousel {
         delay: 3000,
         disableOnInteraction: false,
         allowTouchMove: false,
-        
       };
 
       console.log('Autoplay');
@@ -56,17 +55,17 @@ export default class Carousel {
       }
     }
 
-        if ('banner' in this.element.dataset) {
+    if ('banner' in this.element.dataset) {
       this.options = {
-        slidesPerView: '2',
+        slidesPerView: 1.5,
         spaceBetween: 50,
         loop: true,
         speed: 3000,
         allowTouchMove: false,
 
         autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
+          delay: 0,
+          disableOnInteraction: false,
         },
         breakpoints: {
           640: {
@@ -82,13 +81,10 @@ export default class Carousel {
             spaceBetween: 50,
           },
         },
-        
       };
-
-      
     }
 
-     if ('wordbanner' in this.element.dataset) {
+    if ('wordbanner' in this.element.dataset) {
       this.options = {
         slidesPerView: 'auto',
         spaceBetween: 100,
@@ -97,38 +93,34 @@ export default class Carousel {
         allowTouchMove: false,
 
         autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
-            
+          delay: 0,
+          disableOnInteraction: false,
         },
-        
       };
 
-      
-      wordBannerCount += 1
+      wordBannerCount += 1;
     }
 
-         if ('infobanner' in this.element.dataset) {
+    if ('infobanner' in this.element.dataset) {
       this.options = {
-        slidesPerView: '2',
+        slidesPerView: 1,
         spaceBetween: 100,
         loop: true,
         speed: 3000,
         allowTouchMove: true,
 
         autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-            
+          delay: 3000,
+          disableOnInteraction: false,
         },
-        
+
+        breakpoints: {
+          780: {
+            slidesPerView: 2,
+          },
+        },
       };
-
-      
-     
     }
-
-    
   }
 
   init() {
