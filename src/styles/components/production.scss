@@ -119,6 +119,19 @@
             .troisd-flex {
                 .troisd-conteneur {
                     max-height: 500px;
+                    position: relative;
+
+                    .icon3d{
+                        position: absolute;
+                        z-index: 2;
+                        bottom: 20px;
+                        left: 20px;
+
+                        color: #fff;
+                        aspect-ratio: 1/1;
+                        width: 70px;
+                        height: 70px;
+                    }
                 }
             }
         }
